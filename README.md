@@ -10,10 +10,15 @@ __Allen Yuan__
 ## Problem Description
 [1] Provide an overview of the general topic or question of interest
 
+The general topic of interest is fitness and tracking workouts for those with differing workout plans, such as cutting weight or bulking weight. Currently, the health and fitness industry lacks a comprehensive guide for individuals who have diverse fitness goals.
+
 [2] Identify an information technology problem in that space
+
+Usually, existing fitness tracking apps provide generic plans and are lacking more personalized recommendations, as well as tailored analytics to individual fitness journeys. In addition to this, there is often a lack of automation with fitness plans, as well as too much data input expected from the user - which de-motivates individuals from using the app.
 
 [3] Identify at least 1 previous or existing attempt to solve this problem
 
+One previous attempt to solve this problem would be FitBit, a company that uses a wireless wrist band to track user data and workouts, which is intended to automatically log data onto an app. However, numerous reports have come out which have shown repeated issues with connectivity with the band. Also, individuals face challenges with accessing tailored workout plans, which calls for a solution that integrates analytics, personalized recommendations, as well as scientific workout plans for an enhanced fitness experience.
 
 
 ## App Description
@@ -31,4 +36,4 @@ The user will view their fitness progress, goals and personalized recommandation
 
 [4] How will using this app help to solve your chosen problem? That is, how is it a solution to the problem you described?
 
-By using this app, the user can get scientific workout plans, and get movitivation by tracking the fitness progress. It can be a solution to the problem because it gives the bobybuilders a better way to conduct workout plans, and achieve their goals.
+By using this app, the user can get scientific workout plans, and get movitivation by tracking the fitness progress. It can be a solution to the problem because it gives the bodybuilders a better way to conduct workout plans, and achieve their goals.

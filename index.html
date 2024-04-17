@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-xs-none col-sm-1 col-md-3"></div>
         <div class="col-xs-12 col-sm-10 col-md-6">
-          <div id="carouselExample" class="carousel slide">
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000"> 
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="img/daniel-apodaca-WdoQio6HPVA-unsplash.jpg" class="" alt="...">
@@ -55,4 +55,10 @@
     </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    // Initialize the carousel using JavaScript
+    var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
+      interval: 4000
+    });
+  </script>
 </body>

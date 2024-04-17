@@ -1,24 +1,46 @@
-main { 
-  background-color: black; 
-  height: 110%; 
-  color:white; 
-} 
-footer { 
-  position: fixed; 
-  height: 100px; 
-  bottom: 0; 
-  width: 100%; 
-} 
-.container { 
-  background-color: black; 
-  color: white; 
-  width: max-content; 
-  margin: 0; 
-} 
-img { 
-  max-width: 100%; 
-  max-height: 100%; 
+main {
+  background-color: black;
+  height: 100%;
 }
+
+body {
+  background-color: black;
+  color:white;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-inner {
+  height: 0;
+  padding-bottom: 50%; /* this sets carousel aspect ratio (4:1 here) */
+}
+
+.carousel-item {
+  position: absolute !important; /* Bootstrap is insistent */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .carousel-item img {
+  height: 100%; /* Bootstrap handles width already */
+  object-fit: cover; /* or 'contain' if you want stretch instead of crop */
   filter: grayscale(100%);
+}
+
+footer {
+  background-color: black;
+  position: fixed;
+  height: 20px;
+  bottom: 0;
+  width: 100%;
+  padding: 3rem;
+}
+
+.container-xxl {
+  background-color: black;
+  color: white;
+  width: max-content;
+  margin: 0;
 }

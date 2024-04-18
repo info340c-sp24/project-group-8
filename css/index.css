@@ -41,3 +41,30 @@ footer {
   color: white;
   width: 100%;
 }
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensure the text appears above the carousel */
+  font-family: 'Jura', sans-serif; /* Set font to Jura */
+  color: white !important; /* Set text color to white */
+}
+
+.text-box {
+  background-color: #727272;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute; /* Ensure the text box stays in place */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .75;
+}
+
+.text-box h2 {
+  font-family: 'Jura', sans-serif;
+  color: white;
+  margin: 0;
+}

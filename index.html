@@ -48,7 +48,7 @@
           </div>
           <!-- Navigation buttons here -->
             <div class="navigation">
-              <div><button id="Recommendations" onclick="openRecommendationsPage()">Recommendations</button></div>
+              <div><button id="Recommendations">Recommendations</button></div>
               <div><button id="Logs">Logs</button></div>
               <div><button id="Analytics">Analytics</button></div>
             </div>
@@ -73,8 +73,8 @@
       interval: 4000
     });
     // Function to scroll to Recommendations section
-    function scrollToRecommendations() {
-      document.getElementById('recommendations-section').scrollIntoView({ behavior: 'smooth' });
+    function openRecommendationsPage() {
+      window.location.href = '#recommendations-section';
     }
   </script>
 </body>

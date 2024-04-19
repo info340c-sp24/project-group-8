@@ -60,6 +60,7 @@
         <div>
         </div>
       </div>
+      <iframe src="recs.html" width="100%" height="800px" frameborder="0"></iframe>
     </main>
   </div>
   <footer class="fixed-bottom">
@@ -70,6 +71,9 @@
     // Initialize the carousel using JavaScript
     var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
       interval: 4000
+    });
+    document.getElementById('Recommendations').addEventListener('click', function() {
+      window.parent.location.href = 'recs.html';
     });
   </script>
 </body>

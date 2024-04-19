@@ -63,10 +63,20 @@ footer {
   opacity: .75;
 }
 
+.text-box h1 {
+  font-family: 'Jura', sans-serif;
+  color: white;
+  margin: 0;
+  width: 100;
+  text-align: center;
+}
+
 .text-box h2 {
   font-family: 'Jura', sans-serif;
   color: white;
   margin: 0;
+  width: 100;
+  text-align: center;
 }
 
 /* Button styles for all buttons within .navigation */
@@ -93,3 +103,65 @@ footer {
   margin-top: 75px; /* Adjust spacing as needed */
   font-family: 'Jura', sans-serif; /* Set font to Jura */
 }
+
+/* Styling for the recommendations page */
+.recommendations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  font-family: 'Jura', sans-serif;
+  position: relative; /* Ensure proper positioning of elements */
+}
+
+.recommendations h2 {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Styling for the image overlay */
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1%;
+  height: 1%;
+  background-position: center;
+  filter: grayscale(100%); /* Apply grayscale effect */
+  opacity: 0.2; /* Adjust opacity as needed */
+  z-index: 1; /* Place below text and button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for the circular button */
+.circle-button {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  border-radius: 100%;
+  background-color: #333; /* Button background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Position relative to its parent */
+  bottom: 20px; /* Adjust position relative to text */
+  cursor: pointer;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+/* Styling for the down arrow */
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid white; /* Arrow color and size */
+}
+
+

@@ -41,14 +41,14 @@
           </div>
           <div>
             <div class="carousel-caption text-dark">
-              <div class="text-box">
-                <h2>Welcome to MyFitness UI</h2>
-              </div>
             </div>
+          </div>
+          <div class="text-box">
+            <h2>Welcome to MyFitness UI</h2>
           </div>
           <!-- Navigation buttons here -->
             <div class="navigation">
-              <div><button id="Recommendations">Recommendations</button></div>
+              <div><button id="Recommendations" onclick="openRecommendationsPage()">Recommendations</button></div>
               <div><button id="Logs">Logs</button></div>
               <div><button id="Analytics">Analytics</button></div>
             </div>
@@ -72,9 +72,10 @@
     var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
       interval: 4000
     });
-    document.getElementById('Recommendations').addEventListener('click', function() {
-      window.parent.location.href = 'recs.html';
-    });
+    // Function to scroll to Recommendations section
+    function scrollToRecommendations() {
+      document.getElementById('recommendations-section').scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>

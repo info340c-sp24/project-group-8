@@ -44,7 +44,7 @@ footer {
 
 .carousel-caption {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000; /* Ensure the text appears above the carousel */
@@ -60,7 +60,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: .75;
+  opacity: .80;
 }
 
 .text-box h1 {
@@ -93,6 +93,7 @@ footer {
 /* Hover effect for all buttons within .navigation */
 .navigation button:hover {
   background-color: #555; /* Background color on hover */
+  transition: background-color 0.3 ease;
 }
 
 /* Styles for .navigation layout */
@@ -149,7 +150,7 @@ footer {
   justify-content: center;
   align-items: center;
   position: absolute; /* Position relative to its parent */
-  bottom: 20px; /* Adjust position relative to text */
+  bottom: 50px; /* Adjust position relative to text */
   cursor: pointer;
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center horizontally */

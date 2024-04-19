@@ -68,3 +68,28 @@ footer {
   color: white;
   margin: 0;
 }
+
+/* Button styles for all buttons within .navigation */
+.navigation button {
+  background-color: #333; /* Background color for buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 40px; /* Adjust vertical spacing between buttons */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for all buttons within .navigation */
+.navigation button:hover {
+  background-color: #555; /* Background color on hover */
+}
+
+/* Styles for .navigation layout */
+.navigation {
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+  margin-top: 75px; /* Adjust spacing as needed */
+  font-family: 'Jura', sans-serif; /* Set font to Jura */
+}

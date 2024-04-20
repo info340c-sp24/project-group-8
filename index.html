@@ -17,6 +17,7 @@
         <div class="col-xs-none col-sm-1 col-md-4"></div>
         <div class="col-xs-12 col-sm-10 col-md-4">
           <h1 class="text-center">Welcome To My Fitness UI</h1>
+            <p class="heading-sub">PUT OUR MISSION HERE</p>
         </div>
         <div class="col-xs-none col-sm-1 col-md-4"></div>
       </div>
@@ -48,7 +49,7 @@
           </div>
           <!-- Navigation buttons here -->
             <div class="navigation">
-              <div><button id="Recommendations">Recommendations</button></div>
+              <div><button id="Recommendations" onclick="openRecommendationsPage()">Recommendations</button></div>
               <div><button id="Logs">Logs</button></div>
               <div><button id="Analytics">Analytics</button></div>
             </div>
@@ -60,7 +61,6 @@
         <div>
         </div>
       </div>
-      <iframe src="recs.html" width="100%" height="800px" frameborder="0"></iframe>
     </main>
   </div>
   <footer class="fixed-bottom">
@@ -74,7 +74,7 @@
     });
     // Function to scroll to Recommendations section
     function openRecommendationsPage() {
-      window.location.href = '#recommendations-section';
+      window.location.href = 'recs.html#recommendations-section';
     }
   </script>
 </body>

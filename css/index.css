@@ -42,6 +42,12 @@ footer {
   width: 100%;
 }
 
+.heading-sub {
+  font-family: 'Jura', sans-serif;
+  font-size: 24px; /* Adjust font size as needed */
+  text-align: center; /* Center text horizontally */
+}
+
 .carousel-caption {
   position: absolute;
   top: 30%;
@@ -101,7 +107,7 @@ footer {
   display: flex; /* Use flexbox layout */
   flex-direction: column; /* Arrange items vertically */
   align-items: center; /* Center items horizontally */
-  margin-top: 75px; /* Adjust spacing as needed */
+  margin-top: 25px; /* Adjust spacing as needed */
   font-family: 'Jura', sans-serif; /* Set font to Jura */
 }
 
@@ -165,4 +171,13 @@ footer {
   border-top: 15px solid white; /* Arrow color and size */
 }
 
+/* Styling for the form on the recommendations page */
+.recs-form {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: 0 auto; /* Center the form horizontally */
+  margin-top: 400px; /* Add some space between the form and the arrow */
+}
 

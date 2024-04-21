@@ -24,8 +24,8 @@
   display: flex; /* Use flexbox layout */
   flex-direction: column; /* Arrange items vertically */
   align-items: center; /* Center items horizontally */
-  margin-top: 25px; /* Adjust spacing as needed */
-  font-family: 'Jura', sans-serif; /* Set font to Jura */
+  margin-top: 25px; /* Adjust spacing */
+  font-family: 'Jura', sans-serif;
 }
 
 /* Styling for the recommendations page */
@@ -37,7 +37,7 @@
   background-color: black;
   color: white;
   font-family: 'Jura', sans-serif;
-  position: relative; /* Ensure proper positioning of elements */
+  position: relative;
 }
 
 .recommendations h2 {
@@ -47,7 +47,6 @@
 }
 
 /* Styling for the image overlay */
-
 .image-overlay {
   position: fixed;
   top: 0;
@@ -56,7 +55,7 @@
   height: 1%;
   background-position: center;
   filter: grayscale(100%); /* Apply grayscale effect */
-  opacity: 0.2; /* Adjust opacity as needed */
+  opacity: 0.2;
   z-index: 1; /* Place below text and button */
   display: flex;
   justify-content: center;
@@ -82,7 +81,7 @@
   padding: 10px;
   border-radius: 5px;
   opacity: 100;
-  z-index: 2; /* Ensure the text box appears above the form */
+  z-index: 2;
   margin-top: -385px;
 }
 
@@ -92,6 +91,6 @@
   padding: 20px;
   border-radius: 5px;
   max-width: 500px;
-  margin: 0 auto; /* Center the form horizontally */
-  margin-top: 400px; /* Add some space between the form and the arrow */
+  margin: 0 auto;
+  margin-top: 400px;
 }

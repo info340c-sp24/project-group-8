@@ -22,14 +22,6 @@
   filter: grayscale(100%) blur(5px);
 }
 
-footer {
-  background-color: black;
-  height: 20px;
-  bottom: 0;
-  width: 100%;
-  padding: 3rem;
-}
-
 .card p {
   font-size: calc( 5px + 2vw);
 }
@@ -62,11 +54,9 @@ footer {
   width: 100%;
 }
 
-button {
-  background-color: inherit;
-  color: inherit;
+.page-button:hover {
+  cursor: pointer;
 }
-
 
 /* Button styles for all buttons within .navigation */
 .navigation button {

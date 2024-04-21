@@ -1,11 +1,22 @@
 body {
+  font-family: 'Jura', sans-serif;
   background-color: black;
   color:white;
   padding: 0;
   margin: 0;
 }
 
-nav
+.nav-link {
+  color: white;
+}
+
+#navbarSupportedContent {
+  border-left: .5px solid white;
+}
+
+.nav-link:hover, .current, .navbar-brand, .navbar-brand:hover{
+  color: chartreuse;
+}
 
 footer {
   background-color: black;
@@ -22,4 +33,12 @@ footer {
 .card {
   color: white;
   background-color:transparent;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+#title {
+  color: chartreuse;
 }

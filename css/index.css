@@ -18,7 +18,7 @@
 }
 
 .card p {
-  font-size: calc( 5px + 2vw);
+  font-size: calc(5px + 2vw);
 }
 
 .card-body h1, #heading-title {
@@ -53,3 +53,14 @@ a:hover, .card:hover {
   cursor: pointer;
 }
 
+#innovate {
+  color: skyblue;
+}
+
+#motivate {
+  color: crimson;
+}
+
+#evaluate {
+  color: chartreuse;
+}

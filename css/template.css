@@ -5,21 +5,14 @@ body {
   margin: 0;
 }
 
+nav
+
 footer {
   background-color: black;
   height: 20px;
   bottom: 0;
   width: 100%;
   padding: 3rem;
-}
-
-#footer {
-  position: relative;
-  margin-top: -180px;
-  /* negative value of footer height */
-  height: 180px;
-  clear: both;
-  background-color: red;
 }
 
 .nowrap {

@@ -11,11 +11,6 @@
   left: 0;
 }
 
-.card {
-  color: white;
-  background-color:transparent;
-}
-
 .carousel-item img {
   height: 100%; /* Bootstrap handles width already */
   object-fit: cover; /* or 'contain' if you want stretch instead of crop */
@@ -52,105 +47,5 @@
   font-weight: bolder;
   margin: 0;
   width: 100%;
-}
-
-.page-button:hover {
-  cursor: pointer;
-}
-
-/* Button styles for all buttons within .navigation */
-.navigation button {
-  background-color: #333; /* Background color for buttons */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-bottom: 40px; /* Adjust vertical spacing between buttons */
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Hover effect for all buttons within .navigation */
-.navigation button:hover {
-  background-color: #555; /* Background color on hover */
-  transition: background-color 0.3 ease;
-}
-
-/* Styles for .navigation layout */
-.navigation {
-  display: flex; /* Use flexbox layout */
-  flex-direction: column; /* Arrange items vertically */
-  align-items: center; /* Center items horizontally */
-  margin-top: 25px; /* Adjust spacing as needed */
-  font-family: 'Jura', sans-serif; /* Set font to Jura */
-}
-
-/* Styling for the recommendations page */
-.recommendations {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: black;
-  color: white;
-  font-family: 'Jura', sans-serif;
-  position: relative; /* Ensure proper positioning of elements */
-}
-
-.recommendations h2 {
-  width: 80%;
-  text-align: center;
-  margin: 0 auto;
-}
-
-/* Styling for the image overlay */
-
-.image-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 1%;
-  height: 1%;
-  background-position: center;
-  filter: grayscale(100%); /* Apply grayscale effect */
-  opacity: 0.2; /* Adjust opacity as needed */
-  z-index: 1; /* Place below text and button */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Styling for the circular button */
-.circle-button {
-  width: 40px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
-  border-radius: 100%;
-  background-color: #333; /* Button background color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute; /* Position relative to its parent */
-  bottom: 50px; /* Adjust position relative to text */
-  cursor: pointer;
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-}
-
-/* Styling for the down arrow */
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 15px solid white; /* Arrow color and size */
-}
-
-/* Styling for the form on the recommendations page */
-.recs-form {
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 500px;
-  margin: 0 auto; /* Center the form horizontally */
-  margin-top: 400px; /* Add some space between the form and the arrow */
 }
 

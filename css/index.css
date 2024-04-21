@@ -1,45 +1,41 @@
-main {
-  height: 100%;
-}
-
-body {
-  background-color: black;
-  color:white;
-  padding: 0;
-  margin: 0;
-}
-
 .carousel-inner {
   height: 0;
-  padding-bottom: 50%; /* this sets carousel aspect ratio (4:1 here) */
+  padding-bottom: 40%; /* this sets carousel aspect ratio (4:1 here) */
 }
 
 .carousel-item {
   position: absolute !important; /* Bootstrap is insistent */
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom:0;
   left: 0;
+}
+
+.card {
+  color: white;
+  background-color:transparent;
 }
 
 .carousel-item img {
   height: 100%; /* Bootstrap handles width already */
   object-fit: cover; /* or 'contain' if you want stretch instead of crop */
-  filter: grayscale(100%);
+  filter: grayscale(100%) blur(5px);
 }
 
 footer {
   background-color: black;
-  position: fixed;
   height: 20px;
   bottom: 0;
   width: 100%;
   padding: 3rem;
 }
 
-.container {
-  color: white;
-  width: 100%;
+.card p {
+  font-size: calc( 5px + 2vw);
+}
+
+.card-body h1, #heading-title {
+  white-space: nowrap;
 }
 
 .heading-sub {
@@ -48,42 +44,29 @@ footer {
   text-align: center; /* Center text horizontally */
 }
 
-.carousel-caption {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; /* Ensure the text appears above the carousel */
-  font-family: 'Jura', sans-serif; /* Set font to Jura */
-  color: white !important; /* Set text color to white */
-}
-
-.text-box {
-  background-color: #727272;
+#heading-title {
+  border: 10px solid chartreuse;
+  color: chartreuse;
   padding: 10px;
   border-radius: 5px;
   position: absolute; /* Ensure the text box stays in place */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: .80;
 }
 
-.text-box h1 {
+#heading-title h1 {
   font-family: 'Jura', sans-serif;
-  color: white;
+  font-weight: bolder;
   margin: 0;
-  width: 100;
-  text-align: center;
+  width: 100%;
 }
 
-.text-box h2 {
-  font-family: 'Jura', sans-serif;
-  color: white;
-  margin: 0;
-  width: 100;
-  text-align: center;
+button {
+  background-color: inherit;
+  color: inherit;
 }
+
 
 /* Button styles for all buttons within .navigation */
 .navigation button {

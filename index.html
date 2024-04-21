@@ -1,76 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta charset="utf-8">
   <meta name="author" content="Group 8">
   <meta name="description" content="fitness and workout helper">
   <title>MyFitness</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="css/template.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap">
 </head>
 <body>
-  <div class="container">
-    <main>
-      <!--Padding top 5% to all rows-->
-      <div class="row">
-        <div class="col-xs-none col-sm-1 col-md-4"></div>
-        <div class="col-xs-12 col-sm-10 col-md-4">
-          <h1 class="text-center">Welcome To My Fitness UI</h1>
-            <p class="heading-sub">PUT OUR MISSION HERE</p>
+  <header>
+    <!--Header Img-->
+    <div id="heading-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/daniel-apodaca-WdoQio6HPVA-unsplash.jpg" class="d-block w-100" alt="...">
         </div>
-        <div class="col-xs-none col-sm-1 col-md-4"></div>
-      </div>
-      <div class="row">
-        <div class="col-xs-none col-sm-1 col-md-3"></div>
-        <div class="col-xs-12 col-sm-10 col-md-6">
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img/daniel-apodaca-WdoQio6HPVA-unsplash.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="img/mor-shani-li4dxZ0KYRw-unsplash.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="img/steven-erixon-FxlYmu_To7o-unsplash.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="carousel-caption text-dark">
-            </div>
-          </div>
-          <div class="text-box">
-            <h2>Welcome to MyFitness UI</h2>
-          </div>
-          <!-- Navigation buttons here -->
-            <div class="navigation">
-              <div><button id="Recommendations" onclick="openRecommendationsPage()">Recommendations</button></div>
-              <div><button id="Logs">Logs</button></div>
-              <div><button id="Analytics">Analytics</button></div>
-            </div>
-          </div>
+        <div class="carousel-item">
+          <img src="img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg" class="d-block w-100" alt="...">
         </div>
-        <div class="col-xs-none col-sm-1 col-md-3"></div>
-      </div>
-      <div class="row content">
-        <div>
+        <div class="carousel-item">
+          <img src="img/steven-erixon-FxlYmu_To7o-unsplash.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-    </main>
-  </div>
-  <footer class="fixed-bottom">
+      <div id="heading-title">
+        <h1 class="display-3">My Fitness UI</h1>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container p-5">
+      <div class="row gy-3 gx-sm-5">
+        <div class="card col-md-4 col-sm-12">
+          <button id="Recommendations" class="shadow-none" onclick="openRecommendationsPage()">
+            <div class="card-body text-center row">
+              <h1 class="h1">Innovate</h1>
+              <p>Set your goal and see our reccomendations for an optimal fitness journey.</p>
+            </div>
+          </button>
+        </div>
+        <div class="card col-md-4 col-sm-12">
+          <div class="card-body text-center">
+            <h1 class="h1">Motivate</h1>
+            <p>Log your progress and see your track record. Knowledge is power.</p>
+          </div>
+        </div>
+        <div class="card col-md-4 col-sm-12">
+          <div class="card-body text-center">
+            <h1 class="h1">Evaluate</h1>
+            <p>Check how well you have done to achieve your goal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
     <p>&copy; Group-8</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script>
     // Initialize the carousel using JavaScript
     var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
-      interval: 4000
+      interval: 100
     });
     // Function to click to Recommendations section
     function openRecommendationsPage() {

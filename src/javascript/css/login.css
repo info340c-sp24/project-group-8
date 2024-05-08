@@ -1,0 +1,28 @@
+/* Styling for the form on the login page */
+body {
+  font-family: 'Jura', sans-serif;
+}
+
+.recs-form {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: 0 auto; /* Center the form horizontally */
+  color: chartreuse;
+}
+
+.card {
+  border: 3px solid chartreuse;
+}
+
+#submit-btn {
+  background-color: chartreuse;
+}
+
+@media (min-height: 730px) {
+  footer {
+    position:fixed;
+    bottom:0;
+  }
+}

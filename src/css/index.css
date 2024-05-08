@@ -1,0 +1,60 @@
+.carousel-inner {
+  height: 0;
+  padding-bottom: 40%; /* this sets carousel aspect ratio (4:1 here) */
+}
+
+.carousel-item {
+  position: absolute !important; /* Bootstrap is insistent */
+  top: 0;
+  right: 0;
+  bottom:0;
+  left: 0;
+}
+
+.carousel-item img {
+  height: 100%; /* Bootstrap handles width already */
+  object-fit: cover; /* or 'contain' if you want stretch instead of crop */
+  filter: grayscale(100%) blur(5px);
+}
+
+.card p {
+  font-size: calc(5px + 2vw);
+}
+
+.card-body h1, #heading-title {
+  white-space: nowrap;
+}
+
+#heading-title {
+  border: 10px solid chartreuse;
+  color: chartreuse;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute; /* Ensure the text box stays in place */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#heading-title h1 {
+  font-family: 'Jura', sans-serif;
+  font-weight: bolder;
+  margin: 0;
+  width: 100%;
+}
+
+a:hover, .card:hover {
+  cursor: pointer;
+}
+
+#innovate {
+  color: skyblue;
+}
+
+#motivate {
+  color: crimson;
+}
+
+#evaluate {
+  color: chartreuse;
+}

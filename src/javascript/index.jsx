@@ -137,6 +137,62 @@ const Card = ({ id, title, description, onClick }) => {
   );
 };
 
+
+// Main Component
+const Main = () => {
+  const handleCardClick = (pageName) => {
+    window.location.href = `${pageName}.html`;
+  };
+
+  return (
+    <main>
+      <div className="container p-5">
+        <div className="row gy-3 gx-sm-5">
+          <Card
+            id="innovate"
+            title="Innovate"
+            description="Set your goal and see our reccomendations for an optimal fitness journey."
+            onClick={() => handleCardClick('recs')}
+          />
+          <Card
+            id="motivate"
+            title="Motivate"
+            description="Log your progress and see your track record. Knowledge is power."
+            onClick={() => handleCardClick('workout-log')}
+          />
+          <Card
+            id="evaluate"
+            title="Evaluate"
+            description="Check how well you have done across your journey."
+            onClick={() => handleCardClick('analytics')}
+          />
+        </div>
+      </div>
+    </main>
+  );
+};
+
+// Footer Component
+const Footer = () => {
+  return <footer>
+    <p>&copy; Group-8</p>
+  </footer>;
+};
+
+// Index Component
+const Index = () => {
+  return (
+    <div>
+      <Navbar />
+      <Header />
+      <Main />
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

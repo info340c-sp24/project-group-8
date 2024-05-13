@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/recs.css'
 
 // Header component
 const Header = () => {
@@ -28,12 +29,30 @@ const Form = () => {
     );
   };
 
+// Image Overlay Component
+const ImageOverlay = () => {
+    return (
+      <div className="image-overlay">
+        <ArrowDown />
+        <TextBox />
+      </div>
+    );
+  };
+  
+  // Arrow Down Component
+  const ArrowDown = () => {
+    return <div className="arrow-down"></div>;
+  };
+
+
 // Main component
 const Main = () => {
     return (
       <main>
         <Header />
         <Form />
+        <ImageOverlay/>
+        <ArrowDown/>
       </main>
     );
   };

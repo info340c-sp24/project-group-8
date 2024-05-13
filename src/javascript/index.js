@@ -11,6 +11,14 @@ root.render(
   </React.StrictMode>
 );
 
+const IndexPage = () => {
+  const carouselImages = [
+    'img/daniel-apodaca-WdoQio6HPVA-unsplash.jpg',
+    'img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg',
+    'img/steven-erixon-FxlYmu_To7o-unsplash.jpg',
+  ]
+}
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

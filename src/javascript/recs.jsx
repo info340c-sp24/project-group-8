@@ -23,16 +23,13 @@ const Header = () => {
 const Form = () => {
   const [fitnessGoal, setFitnessGoal] = useState('');
   const [recommendations, setRecommendations] = useState([]);
-  const REACT_APP_OPENAI_API_KEY='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';
 
-
-const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // Make API call to ChatGPT with user's fitness goal
-      const response = await axios.post(apiKey, {
+      const response = await axios.post('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', {
         model: 'chatgpt',
         prompt: fitnessGoal,
         max_tokens: 300 // Adjust as needed

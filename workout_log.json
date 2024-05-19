@@ -1,0 +1,152 @@
+{
+    "workoutLog": [
+      {
+        "day": "Monday",
+        "time": "8:00 - 10:00",
+        "workout": [
+          {
+            "exercise": "Lat Pulldown",
+            "sets": 3,
+            "reps": 10
+          },
+          {
+            "exercise": "Bicep Curl",
+            "sets": 3,
+            "reps": 10
+          },
+          {
+            "exercise": "Leg Press",
+            "sets": 4,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "time": "9:00 - 11:00",
+        "workout": [
+          {
+            "exercise": "Deadlifts",
+            "sets": 4,
+            "reps": 8
+          },
+          {
+            "exercise": "Shoulder Press",
+            "sets": 3,
+            "reps": 12
+          },
+          {
+            "exercise": "Leg Curls",
+            "sets": 3,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "time": "10:00 - 12:00",
+        "workout": [
+          {
+            "exercise": "Squats",
+            "sets": 5,
+            "reps": 5
+          },
+          {
+            "exercise": "Tricep Dips",
+            "sets": 3,
+            "reps": 15
+          },
+          {
+            "exercise": "Calf Raises",
+            "sets": 4,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "day": "Thursday",
+        "time": "11:00 - 13:00",
+        "workout": [
+          {
+            "exercise": "Pull-ups",
+            "sets": 3,
+            "reps": 10
+          },
+          {
+            "exercise": "Hammer Curls",
+            "sets": 3,
+            "reps": 12
+          },
+          {
+            "exercise": "Leg Extensions",
+            "sets": 3,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "day": "Friday",
+        "time": "12:00 - 14:00",
+        "workout": [
+          {
+            "exercise": "Bench Press",
+            "sets": 4,
+            "reps": 8
+          },
+          {
+            "exercise": "Dumbbell Flys",
+            "sets": 3,
+            "reps": 12
+          },
+          {
+            "exercise": "Lunges",
+            "sets": 3,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "day": "Saturday",
+        "time": "13:00 - 15:00",
+        "workout": [
+          {
+            "exercise": "Lat Pulldown",
+            "sets": 3,
+            "reps": 10
+          },
+          {
+            "exercise": "Cable Rows",
+            "sets": 3,
+            "reps": 12
+          },
+          {
+            "exercise": "Leg Press",
+            "sets": 4,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "day": "Sunday",
+        "time": "14:00 - 16:00",
+        "workout": [
+          {
+            "exercise": "Deadlifts",
+            "sets": 4,
+            "reps": 8
+          },
+          {
+            "exercise": "Shoulder Press",
+            "sets": 3,
+            "reps": 12
+          },
+          {
+            "exercise": "Leg Curls",
+            "sets": 3,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  }
+  

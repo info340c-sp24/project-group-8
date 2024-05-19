@@ -1,107 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from '../reportWebVitals';
+import '../css/home.css';
+import { useNavigate } from 'react-router-dom';
 
-const IndexPage = () => {
-    const carouselImages = [
-      'img/daniel-apodaca-WdoQio6HPVA-unsplash.jpg',
-      'img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg',
-      'img/steven-erixon-FxlYmu_To7o-unsplash.jpg',
-    ]
-  }
-  
-  // Navbar Component
-  const Navbar = () => {
-    const handleNavClick = (pageName) => {
-      window.location.href = `${pageName}.html`;
-    };
-  
-    return (
-      <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid">
-          <a
-            className="navbar-brand display-5 fw-bold"
-            onClick={() => handleNavClick('index')}
-          >
-            My Fitness UI
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a
-                  className="nav-link fw-bold current"
-                  onClick={() => handleNavClick('index')}
-                >
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link fw-bold"
-                  onClick={() => handleNavClick('recs')}
-                >
-                  Recommendations
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link fw-bold"
-                  onClick={() => handleNavClick('workout-log')}
-                >
-                  Workout Logs
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link fw-bold"
-                  onClick={() => handleNavClick('analytics')}
-                >
-                  Analytics
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link fw-bold"
-                  onClick={() => handleNavClick('login')}
-                >
-                  Login
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    );
-  };
-  
   // Header Component
-  const Header = () => {
+  const Header = (props) => {
+    let carouselImages = props.imgs;
+    let count = 0;
+    let carousel = carouselImages.forEach((image) => {
+      count++;
+      return(<CarouselImg img={image} active={count} key={count}/>);
+    });
     return (
       <header>
         <div id="heading-carousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="img/daniel-apodaca-WdoQio6HPVA-unsplash.jpg" className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <img src="img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg" className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <img src="img/steven-erixon-FxlYmu_To7o-unsplash.jpg" className="d-block w-100" alt="..." />
-            </div>
+            {carousel}
           </div>
           <div id="heading-title">
             <h1 className="display-3">My Fitness UI</h1>
@@ -115,7 +28,22 @@ const IndexPage = () => {
       </header>
     );
   };
-  
+
+  function CarouselImg(props) {
+    let img = props.img;
+    let active = props.active;
+    let classActive = "";
+    if (active === 0) {
+      classActive = " active";
+    }
+    return(
+      <div className={"carousel-item" + classActive}>
+        <img src={img} className="d-block w-100" alt={img} />
+      </div>
+    );
+  }
+
+
   // Card Component
   const Card = ({ id, title, description, onClick }) => {
     return (
@@ -129,14 +57,15 @@ const IndexPage = () => {
       </div>
     );
   };
-  
-  
+
+
   // Main Component
   const Main = () => {
-    const handleCardClick = (pageName) => {
-      window.location.href = `${pageName}.html`;
+    const navigate = useNavigate();
+    const toPage = (pageName) => {
+      navigate("/" + pageName);
     };
-  
+
     return (
       <main>
         <div className="container p-5">
@@ -145,48 +74,46 @@ const IndexPage = () => {
               id="innovate"
               title="Innovate"
               description="Set your goal and see our reccomendations for an optimal fitness journey."
-              onClick={() => handleCardClick('recs')}
+              onClick={() => toPage('recommendations')}
             />
             <Card
               id="motivate"
               title="Motivate"
               description="Log your progress and see your track record. Knowledge is power."
-              onClick={() => handleCardClick('workout-log')}
+              onClick={() => toPage('workout-log')}
             />
             <Card
               id="evaluate"
               title="Evaluate"
               description="Check how well you have done across your journey."
-              onClick={() => handleCardClick('analytics')}
+              onClick={() => toPage('analytics')}
             />
           </div>
         </div>
       </main>
     );
   };
-  
+
   // Footer Component
   const Footer = () => {
     return <footer>
       <p>&copy; Group-8</p>
     </footer>;
   };
-  
+
   // Index Component
-  const Index = () => {
+  function Index() {
+    const carouselImages = [
+      'img/daniel-apodaca-WdoQio6HPVA-unsplash.jpg',
+      'img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg',
+      'img/steven-erixon-FxlYmu_To7o-unsplash.jpg',
+    ]
     return (
-      <div>
-        <Navbar />
-        <Header />
+      <>
+        <Header imgs={carouselImages}/>
         <Main />
-        <Footer />
-      </div>
+      </>
     );
   };
-  
+
   export default Index;
-  
-  // If you want to start measuring performance in your app, pass a function
-  // to log results (for example: reportWebVitals(console.log))
-  // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-  reportWebVitals();

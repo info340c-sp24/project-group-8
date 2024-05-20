@@ -215,3 +215,5 @@ function Analytics(props) {
     </>
     );
 }
+
+export default AnalyticsContent;

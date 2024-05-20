@@ -79,3 +79,5 @@ function RenderLogin() {
     </>
   );
 }
+
+export default LoginContent;

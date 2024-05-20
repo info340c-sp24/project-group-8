@@ -52,20 +52,53 @@
     </header>
     <main>
       <div class="container mt-5">
-
-    <table>
-        <tr>
-            <th>Time</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
-        </tr>
-        <tr>
-            <td>8:00</td>
+        <label for="day">Select Day:</label>
+        <select id="day">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+        <br><br>
+        <label for="time">Select Time:</label>
+        <select id="time">
+          <option value="Morning">Morning</option>
+          <option value="Noon">Noon</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+        </select>
+        <br><br>
+        <label for="activity">Activity:</label>
+        <textarea id="activity" rows="4" cols="50"></textarea>
+        <br><br>
+        <button onclick="updateLog()">Submit</button>
+        
+        <table>
+          <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+              <th>Saturday</th>
+              <th>Sunday</th>
+          </tr>
+          <tr>
+              <td>Morning</td>
+              <td><input type="text" value="your plan"></td>
+              <td><input type="text" value="your plan"></td>
+              <td><input type="text" value="your plan"></td>
+              <td><input type="text" value="your plan"></td>
+              <td><input type="text" value="your plan"></td>
+              <td><input type="text" value="your plan"></td>
+              <td><input type="text" value="your plan"></td>
+          </tr>
+          <tr>
+            <td>Noon</td>
             <td><input type="text" value="your plan"></td>
             <td><input type="text" value="your plan"></td>
             <td><input type="text" value="your plan"></td>
@@ -74,9 +107,8 @@
             <td><input type="text" value="your plan"></td>
             <td><input type="text" value="your plan"></td>
         </tr>
-        <!-- Add more rows for additional time slots -->
         <tr>
-          <td>9:00</td>
+          <td>Afternoon</td>
           <td><input type="text" value="your plan"></td>
           <td><input type="text" value="your plan"></td>
           <td><input type="text" value="your plan"></td>
@@ -85,9 +117,8 @@
           <td><input type="text" value="your plan"></td>
           <td><input type="text" value="your plan"></td>
       </tr>
-
       <tr>
-        <td>10:00</td>
+        <td>Evening</td>
         <td><input type="text" value="your plan"></td>
         <td><input type="text" value="your plan"></td>
         <td><input type="text" value="your plan"></td>
@@ -96,121 +127,7 @@
         <td><input type="text" value="your plan"></td>
         <td><input type="text" value="your plan"></td>
     </tr>
-
-    <tr>
-      <td>11:00</td>
-      <td><input type="text" value="your plan"></td>
-      <td><input type="text" value="your plan"></td>
-      <td><input type="text" value="your plan"></td>
-      <td><input type="text" value="your plan"></td>
-      <td><input type="text" value="your plan"></td>
-      <td><input type="text" value="your plan"></td>
-      <td><input type="text" value="your plan"></td>
-  </tr>
-
-<tr>
-    <td>12:00</td>
-    <td><input type="text" value="your plan"></td>
-    <td><input type="text" value="your plan"></td>
-    <td><input type="text" value="your plan"></td>
-    <td><input type="text" value="your plan"></td>
-    <td><input type="text" value="your plan"></td>
-    <td><input type="text" value="your plan"></td>
-    <td><input type="text" value="your plan"></td>
-</tr>
-
-<tr>
-  <td>13:00</td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-</tr>
-
-<tr>
-<td>14:00</td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-</tr>
-
-<tr>
-<td>15:00</td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-</tr>
-
-<tr>
-  <td>16:00</td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-</tr>
-
-<tr>
-<td>17:00</td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-</tr>
-
-<tr>
-<td>18:00</td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-</tr>
-
-<tr>
-<td>19:00</td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-<td><input type="text" value="your plan"></td>
-</tr>
-
-<tr>
-  <td>20:00</td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  <td><input type="text" value="your plan"></td>
-  </tr>
-
-
-
-
-    </table>
+        </table>
       </div>
     </main>
     <footer>
@@ -218,26 +135,63 @@
       </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        // Function to click to Recommendations section
-    function openRecsPage() {
-      window.location.href = 'recs.html';
+      // Initialize the carousel using JavaScript
+      var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
+        interval: 100
+      });
+      // Function to click to Recommendations section
+      function openRecsPage() {
+        window.location.href = 'recs.html';
+      }
+      // Function to click to Recommendations section
+      function openIndexPage() {
+        window.location.href = 'index.html';
+      }
+      // Function to click to Recommendations section
+      function openLoginPage() {
+        window.location.href = 'login.html';
+      }
+      // Function to click to Recommendations section
+      function openLogPage() {
+        window.location.href = 'workout-log.html';
+      }
+      // Function to click to  section
+      function openAnalyticsPage() {
+        window.location.href = 'analytics.html';
+      }
+
+    // Function to update log
+    function updateLog() {
+      var day = document.getElementById("day").value;
+      var time = document.getElementById("time").value;
+      var activity = document.getElementById("activity").value;
+
+      // You can update the log here based on the selected day, time, and activity
+      console.log("Day: " + day);
+      console.log("Time: " + time);
+      console.log("Activity: " + activity);
+
     }
-    // Function to click to Recommendations section
-    function openIndexPage() {
-      window.location.href = 'index.html';
-    }
-    // Function to click to Recommendations section
-    function openLoginPage() {
-      window.location.href = 'login.html';
-    }
-    // Function to click to Recommendations section
-    function openLogPage() {
-      window.location.href = 'workout-log.html';
-    }
-    // Function to click to  section
-    function openAnalyticsPage() {
-      window.location.href = 'analytics.html';
-    }
-    </script>
-</body>
-</html>
+
+    // Function to update log
+function updateLog() {
+  // Get the selected day, time, and activity
+  var day = document.getElementById("day").value;
+  var time = document.getElementById("time").value;
+  var activity = document.getElementById("activity").value;
+
+  // Find the corresponding cell in the table and update its value
+  var table = document.querySelector("table");
+  var rows = table.rows;
+  for (var i = 1; i < rows.length; i++) {
+      var cells = rows[i].cells;
+      // Find the cell corresponding to the selected day and time
+      if (cells[0].innerText === time) {
+          // Update the cell value with the user's activity
+          cells[i].querySelector("input").value = activity;
+          break; // Exit loop after updating the cell
+      }
+  }
+}
+</script>
+

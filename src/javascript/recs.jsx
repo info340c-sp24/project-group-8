@@ -1,6 +1,5 @@
 // This file is to create static components for the recs.js page to put in app.js
 
-import React from 'react';
 import '../css/recs.css'
 
 import React, { useState } from 'react';
@@ -79,7 +78,6 @@ const ImageOverlay = () => {
     return (
       <div className="image-overlay">
         <ArrowDown />
-        <TextBox />
       </div>
     );
   };

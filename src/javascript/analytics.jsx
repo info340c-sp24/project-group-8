@@ -198,6 +198,7 @@ function AnalyticsContent() {
 }
 
 function Analytics(props) {
+  let userData = props.userData;
   return (
     <>
       <header>
@@ -209,11 +210,11 @@ function Analytics(props) {
 
       <main>
         <div class="container">
-          <AnalyticsContent />
+          <AnalyticsContent userData={userData}/>
         </div>
       </main>
     </>
     );
 }
 
-export default AnalyticsContent;
+export default Analytics;

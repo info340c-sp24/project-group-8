@@ -3,7 +3,7 @@
 import '../css/recs.css'
 
 import React, { useState } from 'react';
-import axios from 'axios'; // Import axios for making HTTP requests for the api
+//import axios from 'axios'; // Import axios for making HTTP requests for the api
 
 // Header component
 const Header = () => {
@@ -23,24 +23,27 @@ const Form = () => {
   const [fitnessGoal, setFitnessGoal] = useState('');
   const [recommendations, setRecommendations] = useState([]);
 
+  function handleSubmit () {
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // Make API call to ChatGPT with user's fitness goal
-      const response = await axios.post('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', {
-        model: 'chatgpt',
-        prompt: fitnessGoal,
-        max_tokens: 300 // Adjust as needed
-      });
-
-      // Extract recommendations from API response
-      const recommendedFitnessPlans = response.data.choices[0].text.trim().split('\n');
-      setRecommendations(recommendedFitnessPlans);
-    } catch (error) {
-      console.error('Error fetching recommendations:', error);
-    }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     // Make API call to ChatGPT with user's fitness goal
+  //     const response = await axios.post('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', {
+  //       model: 'chatgpt',
+  //       prompt: fitnessGoal,
+  //       max_tokens: 300 // Adjust as needed
+  //     });
+
+  //     // Extract recommendations from API response
+  //     const recommendedFitnessPlans = response.data.choices[0].text.trim().split('\n');
+  //     setRecommendations(recommendedFitnessPlans);
+  //   } catch (error) {
+  //     console.error('Error fetching recommendations:', error);
+  //   }
+  // };
 
   return (
     <section id="form">

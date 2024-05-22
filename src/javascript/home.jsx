@@ -80,7 +80,7 @@ import { useNavigate } from 'react-router-dom';
               id="motivate"
               title="Motivate"
               description="Log your progress and see your track record. Knowledge is power."
-              onClick={() => toPage('workout-log')}
+              onClick={() => toPage('workout-logs')}
             />
             <Card
               id="evaluate"

@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
 
             {/* if currentUrlPath ===  "about" */}
-            <Route path="/recomnendations" element={<Reccom />} />
+            <Route path="/recommendations" element={<Reccom />} />
 
             {/* if currentUrlPath ===  "login" */}
             <Route path="/login" element={<LogIn />} />

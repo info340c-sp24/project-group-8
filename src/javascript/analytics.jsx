@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../css/analytics.css';
 function AnalyticsContent() {
   return(
     <div class="row">

@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../css/login.css';
 function NavBar() {
   return(
       <nav className="navbar navbar-expand-lg">

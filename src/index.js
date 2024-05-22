@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './javascript/App';
-import './css/template.css';
-import { BrowserRouter } from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./javascript/App";
+import "./css/template.css";
+import { BrowserRouter } from "react-router-dom";
+// for testing purposes
 // import reportWebVitals from './reportWebVitals';
 
 // Import the functions you need from the SDKs you need
@@ -17,13 +18,13 @@ const firebaseConfig = {
   projectId: "m-f-u-i",
   storageBucket: "m-f-u-i.appspot.com",
   messagingSenderId: "1067112540809",
-  appId: "1:1067112540809:web:d47620d088e43db1723458"
+  appId: "1:1067112540809:web:d47620d088e43db1723458",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
       <App />

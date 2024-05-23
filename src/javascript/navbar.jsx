@@ -15,19 +15,39 @@ function Navigation() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold current" to="/" id="home" activeStyle={{color: "yellow"}}>Home</NavLink>
+              <NavLink className="nav-link fw-bold current" to="/" id="home" style={isActive => {
+                if (isActive.isActive) {
+                  return ({color:"chartreuse"})
+                }
+              }}>Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold" to="/recommendations" id="recs">Recommendations</NavLink>
+              <NavLink className="nav-link fw-bold" to="/recommendations" id="recs" style={isActive => {
+                if (isActive.isActive) {
+                  return ({color:"chartreuse"})
+                }
+              }}>Recommendations</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold" to="/workout-logs" id="logs">Logs</NavLink>
+              <NavLink className="nav-link fw-bold" to="/workout-logs" id="logs" style={isActive => {
+                if (isActive.isActive) {
+                  return ({color:"chartreuse"})
+                }
+              }}>Logs</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold" to="/analytics" id="analytics">Analytics</NavLink>
+              <NavLink className="nav-link fw-bold" to="/analytics" id="analytics" style={isActive => {
+                if (isActive.isActive) {
+                  return ({color:"chartreuse"})
+                }
+              }}>Analytics</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold" to="/login" id="login">Login</NavLink>
+              <NavLink className="nav-link fw-bold" to="/login" id="login" style={isActive => {
+                if (isActive.isActive) {
+                  return ({color:"chartreuse"})
+                }
+              }}>Login</NavLink>
             </li>
           </ul>
         </div>

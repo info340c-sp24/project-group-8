@@ -1,7 +1,7 @@
 // This file is to create static components for the workout-log.js page to put in app.js
 
 import React from 'react';
-import '../css/recs.css'
+import '../css/recs.css';
 
 // Navbar component
 function Navbar() {
@@ -101,7 +101,7 @@ function Table() {
         <textarea id="activity" rows="4" cols="50"></textarea>
         </br>
         <button onclick="updateLog()">Submit</button>
-        
+
 <table>
           <tr>
               <th>Time</th>
@@ -183,7 +183,7 @@ function Main() {
 // Recommendations component
 function Workout_log() {
     return (
-      <div id="workout-log-section" className="workout-logß">
+      <div id="workout-log-section" className="workout-log">
         <Main />
       </div>
     );

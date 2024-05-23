@@ -52,6 +52,6 @@
 }
 
 #recommendations-card {
-  border: 15px solid rgb(255, 0, 255); /* Change the color as desired */
-  color: rgb(255, 3, 255); /* Change the color as desired */
+  border: 15px solid rgb(255, 0, 255); 
+  color: rgb(255, 3, 255);
 }

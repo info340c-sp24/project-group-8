@@ -29,7 +29,7 @@ function Navigation() {
               }}>Recommendations</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold" to="/workout-logs" id="logs" style={isActive => {
+              <NavLink className="nav-link fw-bold" to="/logs" id="logs" style={isActive => {
                 if (isActive.isActive) {
                   return ({color:"chartreuse"})
                 }

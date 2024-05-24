@@ -26,9 +26,6 @@ body {
   color:white;
 }
 
-@media (min-height: 730px) {
-  footer {
-    position:fixed;
-    bottom:0;
-  }
+#error-msg {
+  color:crimson;
 }

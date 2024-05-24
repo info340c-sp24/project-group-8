@@ -10,7 +10,7 @@ import {Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle';
 
 function App() {
-  const [user, setUser] = React.useState({});
+  const [user, setUser] = React.useState(null);
   function userUpdate(userObject) {
     setUser(userObject);
   }
@@ -28,9 +28,9 @@ function App() {
             <Route path="/login" element={<LogIn userUpdateCallback={userUpdate}/>} />
 
             {/* if currentUrlPath ===  "workout-logs" */}
-            <Route path="/workout-logs" element={<WorkoutLog userObject={user} userUpdateCallback={userUpdate}/>} />
+            <Route path="/logs" element={<WorkoutLog userObject={user} userUpdateCallback={userUpdate}/>} />
 
-            {/* if currentUrlPath ===  "anlaytics" */}
+            {/* if currentUrlPath ===  "analytics" */}
             <Route path="/analytics" element={<Analytics userObject={user}/>} />
         </Routes>
         <Footer />

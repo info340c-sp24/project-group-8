@@ -1,8 +1,249 @@
 [
   {
     "user_id": "user123",
-    "password": "p@ssw0rd!",
-    "email": "user123@example.com"
+    "password": "123",
+    "email": "user123@example.com",
+    "log": [
+      {
+        "date": "27/03/2024",
+        "net_calories": "1850",
+        "food": [{
+            "name": "food1",
+            "calories": {
+              "value": "1200",
+              "unit": "cal"
+            },
+              "protein": {
+                "value": "12",
+                "unit": "g"
+              },
+              "fat": {
+                "value": "10",
+                "unit": "g"
+              },
+              "carb": {
+                "value": "5",
+                "unit": "g"
+            }
+          },
+          {
+            "name": "food1",
+            "calories": {
+              "value": "1000",
+              "unit": "cal"
+            },
+              "protein": {
+                "value": "5",
+                "unit": "g"
+              },
+              "fat": {
+                "value": "5",
+                "unit": "g"
+              },
+              "carb": {
+                "value": "15",
+                "unit": "g"
+              }
+          }
+        ],
+        "workout": [{
+            "name": "excercise1",
+            "sets": "12",
+            "reps": "3",
+            "calories": {
+              "value": "100",
+              "unit": "cal"
+            },
+            "type":"cardio"
+          },
+          {
+            "name": "excercise2",
+            "sets": "10",
+            "reps": "2",
+            "calories": {
+              "value": "250",
+              "unit": "cal"
+            },
+            "type":"core"
+          }
+        ],
+        "sleep": {
+          "value": "8.5",
+          "unit": "hours",
+          "type": "time"
+        },
+        "hydration": {
+          "value": "0.9",
+          "unit": "liter"
+        },
+        "weight": {
+          "value": "100",
+          "unit": "kg"
+        }
+      },
+      {
+        "date": "27/03/2024",
+        "net_calories": "1850",
+        "food": [{
+            "name": "food1",
+            "calories": {
+              "value": "1200",
+              "unit": "cal"
+            },
+            "macros" : {
+              "protein": {
+                "value": "12",
+                "unit": "g"
+              },
+              "fat": {
+                "value": "10",
+                "unit": "g"
+              },
+              "carb": {
+                "value": "5",
+                "unit": "g"
+              }
+            }
+          },
+          {
+            "name": "food1",
+            "calories": {
+              "value": "1000",
+              "unit": "cal"
+            },
+            "macros" : {
+              "protein": {
+                "value": "5",
+                "unit": "g"
+              },
+              "fat": {
+                "value": "5",
+                "unit": "g"
+              },
+              "carb": {
+                "value": "15",
+                "unit": "g"
+              }
+            }
+          }
+        ],
+        "workout": [{
+            "name": "excercise1",
+            "sets": "12",
+            "reps": "3",
+            "calories": {
+              "value": "100",
+              "unit": "cal"
+            },
+            "type":"cardio"
+          },
+          {
+            "name": "excercise2",
+            "sets": "10",
+            "reps": "2",
+            "calories": {
+              "value": "250",
+              "unit": "cal"
+            },
+            "type":"core"
+          }
+        ],
+        "sleep": {
+          "value": "8.5",
+          "unit": "hours",
+          "type": "time"
+        },
+        "hydration": {
+          "value": "0.9",
+          "unit": "liter"
+        },
+        "weight": {
+          "value": "100",
+          "unit": "kg"
+        }
+      },
+      {
+        "date": "27/03/2024",
+        "net_calories": "1850",
+        "food": [{
+            "name": "food1",
+            "calories": {
+              "value": "1200",
+              "unit": "cal"
+            },
+            "macros" : {
+              "protein": {
+                "value": "12",
+                "unit": "g"
+              },
+              "fat": {
+                "value": "10",
+                "unit": "g"
+              },
+              "carb": {
+                "value": "5",
+                "unit": "g"
+              }
+            }
+          },
+          {
+            "name": "food1",
+            "calories": {
+              "value": "1000",
+              "unit": "cal"
+            },
+            "macros" : {
+              "protein": {
+                "value": "5",
+                "unit": "g"
+              },
+              "fat": {
+                "value": "5",
+                "unit": "g"
+              },
+              "carb": {
+                "value": "15",
+                "unit": "g"
+              }
+            }
+          }
+        ],
+        "workout": [{
+            "name": "excercise1",
+            "sets": "12",
+            "reps": "3",
+            "calories": {
+              "value": "100",
+              "unit": "cal"
+            },
+            "type":"cardio"
+          },
+          {
+            "name": "excercise2",
+            "sets": "10",
+            "reps": "2",
+            "calories": {
+              "value": "250",
+              "unit": "cal"
+            },
+            "type":"core"
+          }
+        ],
+        "sleep": {
+          "value": "8.5",
+          "unit": "hours",
+          "type": "time"
+        },
+        "hydration": {
+          "value": "0.9",
+          "unit": "liter"
+        },
+        "weight": {
+          "value": "100",
+          "unit": "kg"
+        }
+      }
+    ]
   },
   {
     "user_id": "john_doe",

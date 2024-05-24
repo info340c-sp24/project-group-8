@@ -82,7 +82,7 @@ function CaroImage(props) {
               id="motivate"
               title="Motivate"
               description="Log your progress and see your track record. Knowledge is power."
-              onClick={() => toPage('workout-logs')}
+              onClick={() => toPage('logs')}
             />
             <Card
               id="evaluate"
@@ -96,15 +96,8 @@ function CaroImage(props) {
     );
   };
 
-  // Footer Component
-  const Footer = () => {
-    return <footer>
-      <p>&copy; Group-8</p>
-    </footer>;
-  };
-
   // Index Component
-  function Index() {
+  function Index(props) {
     const [myTime, setMyTime] = React.useState(0);
 
     React.useEffect(() => {
@@ -123,7 +116,7 @@ function CaroImage(props) {
     ]
     return (
       <>
-        <Header imgs={carouselImages} current={myTime}/>
+        <Header imgs={carouselImages} current={myTime} user={props.user}/>
         <Main />
       </>
     );

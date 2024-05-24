@@ -41,10 +41,6 @@ function RenderLogin() {
       <LoginContent />
     </div>
   </main>
-  <footer>
-    <p>&copy; Group-8</p>
-  </footer>
-  <script src="../src/javascript/carousel.js"></script>
     </>
   );
 }

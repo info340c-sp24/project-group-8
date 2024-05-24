@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function CaroImage(props) {
-  //console.log(props.img);
+  //console.log(props.img)
   let img = props.img;
   let active = props.active;
   let classActive = "";
@@ -21,6 +21,11 @@ function CaroImage(props) {
 
   // Header Component
   const Header = (props) => {
+    let greet = "";
+    let user = props.userObject;
+    if (user !== null) {
+      greet = "Welcome, " + user.user_id + "!";
+    }
     let carouselImages = props.imgs;
     let index = props.current % 3;
     //console.log(carouselImages);
@@ -35,6 +40,7 @@ function CaroImage(props) {
           <div id="heading-title">
             <h1 className="display-3">My Fitness UI</h1>
           </div>
+          <h2 className="mt-3 text-center display-5 fw-bold">{greet}</h2>
         </div>
         <div className="w-100 text-center">
           <h2 className="fst-italic opacity-50 mt-4">
@@ -116,7 +122,7 @@ function CaroImage(props) {
     ]
     return (
       <>
-        <Header imgs={carouselImages} current={myTime} user={props.user}/>
+        <Header imgs={carouselImages} current={myTime} userObject={props.userObject}/>
         <Main />
       </>
     );

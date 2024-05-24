@@ -55,3 +55,7 @@
   border: 15px solid rgb(255, 0, 255); 
   color: rgb(255, 3, 255);
 }
+
+#goal-label {
+  color: rgb(255, 3, 255);
+}

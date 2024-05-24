@@ -45,34 +45,6 @@ const Form = () => {
   //   }
   // };
 
-  return (
-    <section id="form">
-      <form className="recs-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="fitness-goal">Fitness Goal</label>
-          <input
-            type="text"
-            className="form-control"
-            id="fitness-goal"
-            placeholder="Enter your ideal goal"
-            value={fitnessGoal}
-            onChange={(e) => setFitnessGoal(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
-
-      {/* Display recommendations */}
-      <div>
-        <h3>Recommendations:</h3>
-        <ul>
-          {recommendations.map((recommendation, index) => (
-            <li key={index}>{recommendation}</li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
 };
 
 
@@ -106,8 +78,38 @@ const Main = () => {
 // Recommendations component
 const Recommendations = () => {
     return (
-      <div id="recommendations-section" className="recommendations">
-        <Main />
+      <div>
+          <header>
+    <div className="container text-center mt-5">
+      <h1 className="display-3 fw-bold">MyFitness Recommendations</h1>
+      <h2 className="fst-italic opacity-50 mt-4">"Success only comes to those who dare to attempt."</h2>
+      <h3 className="fw-bold mt-4">Let us help you with finding the perfect plan</h3>
+    </div>
+  </header>
+  <main>
+    <div className="row">
+      <div className="col-md-2"></div>
+      <div className="col-xs-12 col-md-8">
+        <div className="card w-100 ml-3 mt-5 p-5 pt-2" id="recommendations-card">
+          <div className="card-body text-center text-lg-start">
+            <h2 className="display-4 nowrap fw-bold" id="header2">Tailored to you...</h2>
+            <div className="row text-center" >
+              <div className="col-sm-12">
+                <form className="recs-form">
+                  <div className="form-group">
+                    <label id="goal-label" htmlFor="fitness-goal">Fitness Goal</label>
+                    <input type="text" className="form-control" id="fitness-goal" placeholder="Ex: Make a Plan for a 6 Month Bulk"/>
+                  </div>
+                  <button type="submit" className="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-2"></div>
+    </div>
+  </main>
       </div>
     );
   };

@@ -3,6 +3,7 @@ table {
   border-collapse: collapse;
   margin-top: 20px;
 }
+
 th, td {
   border: 1px solid white;
   padding: 10px;
@@ -23,4 +24,21 @@ input[type="text"] {
   background-color: transparent;
   color: white;
   text-align: center;
+}
+
+
+
+input.form-control {
+  background-color: #ffffff;
+}
+/* Custom CSS for the workout log cards */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none; /* Initially hide all cards */
+}
+
+.card.active {
+  display: block; /* Show only the active card */
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './home';
 import WorkoutLog from './workout-log';
-import * as Helper from './helper';
 import Reccom from './recs';
 import Analytics from './analytics';
 import LogIn from './login';

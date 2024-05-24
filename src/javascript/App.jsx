@@ -10,24 +10,28 @@ import {Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle';
 
 function App() {
+  const [user, setUser] = React.useState({});
+  function userUpdate(userObject) {
+    setUser(userObject);
+  }
     return (
       <>
         <Nav />
         <Routes> {/* the collection of routes to match */}
             {/* if currentUrlPath === "home" */}
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home userObject={user}/>} />
 
             {/* if currentUrlPath ===  "about" */}
-            <Route path="/recommendations" element={<Reccom />} />
+            <Route path="/recommendations" element={<Reccom userObject={user}/>} />
 
             {/* if currentUrlPath ===  "login" */}
-            <Route path="/login" element={<LogIn />} />
+            <Route path="/login" element={<LogIn userUpdateCallback={userUpdate}/>} />
 
             {/* if currentUrlPath ===  "workout-logs" */}
-            <Route path="/workout-logs" element={<WorkoutLog />} />
+            <Route path="/workout-logs" element={<WorkoutLog userObject={user} userUpdateCallback={userUpdate}/>} />
 
             {/* if currentUrlPath ===  "anlaytics" */}
-            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/analytics" element={<Analytics userObject={user}/>} />
         </Routes>
         <Footer />
       </>

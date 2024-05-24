@@ -1,21 +1,3 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid white;
-  padding: 10px;
-  text-align: center;
-}
-th {
-  background-color: #333;
-}
-td {
-  background-color: #444;
-  color: white;
-}
 input[type="text"] {
   width: 100%;
   padding: 5px;
@@ -23,21 +5,29 @@ input[type="text"] {
   border: none;
   background-color: transparent;
   color: white;
-  text-align: center;
 }
-
-
 
 input.form-control {
   background-color: #ffffff;
 }
 /* Custom CSS for the workout log cards */
-.card {
-  border: 1px solid #ddd;
+.wo-logs .card {
+  border: 5px solid crimson;
+  color: crimson;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card.active {
-  display: block; /* Show only the active card */
+.log-btn {
+  background-color:crimson;
+  color: black;
+}
+
+.log-btn:hover {
+    background-color:maroon;
+    color: white;
+}
+
+.wo-logs {
+  color:crimson;
 }

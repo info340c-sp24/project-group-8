@@ -11,7 +11,6 @@
     <link href="../src/css/template.css" rel="stylesheet">
     <link href="../src/css/logs.css" rel="stylesheet"> <!--Sahil, I put your css from index here-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap">
-
     <title>Workout Log</title>
 </head>
 <body>
@@ -19,58 +18,81 @@
         <!-- Your navigation bar -->
     </nav>
     <header>
-        <!-- Your header -->
+        <div class="container text-center mt-5">
+          <h1 class="display-3 fw-bold">Workout Logs</h1>
+          <h2 class="fst-italic opacity-50 mt-4">"Remember thy legacy."</h2>
+        </div>
     </header>
     <main>
         <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="card" id="currentCard"> <!-- Initial card -->
-                        <div class="card-body">
-                            <h5 class="card-title">Workout Log</h5>
-                            <form id="workoutForm">
-                                <div class="mb-3">
-                                    <label for="date">Date</label>
-                                    <input type="date" class="form-control" id="date">
+            <div class="row">
+                <div class="col-1 col-lg-3"></div>
+                <div class="col-sm-10 col-lg-6">
+                    <div class="card text-center">
+                        <h3 class="display-3 card-title fw-bold mt-4">23/05/2024</h3>
+                        <div class="card-body text-center">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4 class="display-4 fw-bold">Workout</h4>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="workout">Workout</label>
-                                    <input type="text" class="form-control" id="workout">
+                                <div class="col-12 mt-2 mb-3 text-center">
+                                    <div class="card mx-5 pb-3">
+                                        <div class="card-content">
+                                            <p class="card-text mt-3"><span class="display-6 fw-bold" id="workout-name">Sit-up</span></p>
+                                            <p class="card-text mt-3"><span class="display-6 fw-bold" id="workout-reps">Core</span></p>
+                                            <p class="card-text mt-3"><span class="display-6 fw-bold" id="workout-reps">10</span> Reps</p>
+                                            <p class="card-text mt-3"><span class="display-6 fw-bold" id="workout-sets">10</span>Sets</p>
+                                            <p class="card-text mt-3"><span class="display-6 fw-bold" id="workout-calories">100</span>Cal</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="intake">Intake</label>
-                                    <input type="text" class="form-control" id="intake">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="reps">Reps</label>
-                                    <input type="text" class="form-control" id="reps">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="sets">Sets</label>
-                                    <input type="text" class="form-control" id="sets">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
                             </div>
-                            <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">${date}</h5>
-                              <p class="card-text"><strong>Workout:</strong> ${workout}</p>
-                              <p class="card-text"><strong>Intake:</strong> ${intake}</p>
-                              <p class="card-text"><strong>Reps:</strong> ${reps}</p>
-                              <p class="card-text"><strong>Sets:</strong> ${sets}</p>
-                            </div>
-                          </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <button id="prevButton" class="btn log-btn w-100 ">Previous</button>
+                        </div>
+                        <div class="col-6">
+                            <button id="nextButton" class="btn log-btn w-100">Next</button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-4 justify-content-center">
-                <div class="col-md-4 text-center">
-                    <button id="prevButton" class="btn btn-primary me-2">Previous</button>
-                    <button id="nextButton" class="btn btn-primary">Next</button>
+                <div class="col-1 col-lg-3"></div>
+                <div class="col-1 col-lg-3"></div>
+                <div class="col-sm-10 col-lg-6 mt-5">
+                    <div class="card" id="currentCard"> <!-- Initial card -->
+                        <div class="card-body">
+                            <h5 class="card-title text-center display-3 fw-bold">Workout Log</h5>
+                            <form id="workoutForm">
+                                <div class="mb-3">
+                                    <label for="date" class="fw-bold display-6" >Date</label>
+                                    <input type="date" class="form-control mt-4" id="date">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="workout" class="fw-bold display-6">Workout</label>
+                                    <input type="text" class="form-control mt-4" id="workout">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="intake" class="fw-bold display-6">Intake</label>
+                                    <input type="text" class="form-control mt-4" id="intake">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="reps" class="fw-bold display-6">Reps</label>
+                                    <input type="text" class="form-control mt-4" id="reps">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="sets" class="fw-bold display-6">Sets</label>
+                                    <input type="text" class="form-control mt-4" id="sets">
+                                </div>
+                                <button type="submit" class="btn mt-4 w-100 text-center fw-bold display-5 log-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-1 col-lg-3"></div>
             </div>
+
         </div>
     </main>
     <footer>
@@ -107,10 +129,10 @@
                 newCard.innerHTML = `
                     <div class="card-body">
                         <h5 class="card-title">${date}</h5>
-                        <p class="card-text"><strong>Workout:</strong> ${workout}</p>
-                        <p class="card-text"><strong>Intake:</strong> ${intake}</p>
-                        <p class="card-text"><strong>Reps:</strong> ${reps}</p>
-                        <p class="card-text"><strong>Sets:</strong> ${sets}</p>
+                        <p class="card-text"><span>Workout:</span> ${workout}</p>
+                        <p class="card-text"><span>Intake:</span> ${intake}</p>
+                        <p class="card-text"><span>Reps:</span> ${reps}</p>
+                        <p class="card-text"><span>Sets:</span> ${sets}</p>
                     </div>
                 `;
                 document.getElementById('currentCard').appendChild(newCard); // Append new card to the current card

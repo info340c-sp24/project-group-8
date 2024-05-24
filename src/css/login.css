@@ -18,6 +18,12 @@ body {
 
 #submit-btn {
   background-color: chartreuse;
+  color: black;
+}
+
+#submit-btn:hover {
+  background-color: darkgreen;
+  color:white;
 }
 
 @media (min-height: 730px) {

@@ -42,3 +42,7 @@ a:hover {
 #title {
   color: chartreuse;
 }
+
+.card.active {
+  display: block; /* Show only the active card */
+}

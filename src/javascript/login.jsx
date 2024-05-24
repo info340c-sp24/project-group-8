@@ -10,11 +10,11 @@ function LoginContent() {
             <div className="card-body">
               <form className="recs-form">
                 <div className="form-group">
-                  <label for="email" className=" nowrap">Email</label>
+                  <label htmlFor="email" className=" nowrap">Email</label>
                   <input type="email" className="form-control mt-3" id="email" placeholder="Enter your email"></input>
                 </div>
                 <div className="form-group mt-4">
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                   <input type="password" className="form-control mt-3" id="password" placeholder="Enter your password"></input>
                 </div>
                 <button className="btn mt-5 w-100" id="submit-btn">Login</button>

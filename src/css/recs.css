@@ -46,3 +46,12 @@
   margin: 0 auto;
   margin-top: 400px;
 }
+
+#header2 {
+  text-align: center;
+}
+
+#recommendations-card {
+  border: 15px solid rgb(255, 0, 255); 
+  color: rgb(255, 3, 255);
+}

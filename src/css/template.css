@@ -14,7 +14,7 @@ body {
   border-left: .5px solid white;
 }
 
-.nav-link:hover, .current, .navbar-brand, .navbar-brand:hover{
+.nav-link:hover, .selected, .navbar-brand, .navbar-brand:hover{
   color: chartreuse;
 }
 

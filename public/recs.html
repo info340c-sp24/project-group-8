@@ -41,28 +41,37 @@
       </div>
     </nav>
   </nav>
-    <div class="container">
-        <div id="recommendations-section" class="recommendations">
-            <main>
-              <header>
-                <div class="container text-center mt-5">
-                  <h1 class="display-3 fw-bold">MyFitness Recommendations</h1>
-                  <h2 class="fst-italic opacity-50 mt-4">“Success only comes to those who dare to attempt.”</h2>
-                  <h3 class="fw-bold mt-4"> Let us help you with finding the perfect plan</h3>
-                </div>
-              </header>
-              <section id="form">
-                  <form class="recs-form">
-                    <div class="form-group">
-                      <label for="fitness-goal">Fitness Goal</label>
-                      <input type="text" class="form-control" id="fitness-goal" placeholder="Enter your ideal goal">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-              </section>
-            </main>
-        </div>
+  <header>
+    <div class="container text-center mt-5">
+      <h1 class="display-3 fw-bold">MyFitness Recommendations</h1>
+      <h2 class="fst-italic opacity-50 mt-4">"Success only comes to those who dare to attempt."</h2>
+      <h3 class="fw-bold mt-4">Let us help you with finding the perfect plan</h3>
     </div>
+  </header>
+  <main>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-xs-12 col-md-8">
+        <div class="card w-100 ml-3 mt-5 p-5 pt-2" id="recommendations-card">
+          <div class="card-body text-center text-lg-start">
+            <h2 class="display-4 nowrap fw-bold" id="header2">Tailored to you...</h2>
+            <div class="row text-center" >
+              <div class="col-sm-12">
+                <form class="recs-form">
+                  <div class="form-group">
+                    <label for="fitness-goal">Fitness Goal</label>
+                    <input type="text" class="form-control" id="fitness-goal" placeholder="Ex: Make a Plan for a 6 Month Bulk">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </main>
   <footer>
     <p>&copy; Group-8</p>
   </footer>

@@ -8,6 +8,7 @@ import LogIn from './login';
 import Nav from './navbar';
 import Footer from './footer';
 import {Route, Routes} from 'react-router-dom';
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 function App() {
     return (

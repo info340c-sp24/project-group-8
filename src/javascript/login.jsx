@@ -44,8 +44,9 @@ function RenderLogin() {
   <footer>
     <p>&copy; Group-8</p>
   </footer>
+  <script src="../src/javascript/carousel.js"></script>
     </>
   );
 }
 
-export default LoginContent;
+export default RenderLogin;

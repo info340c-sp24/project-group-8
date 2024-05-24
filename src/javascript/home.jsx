@@ -2,14 +2,30 @@ import React from 'react';
 import '../css/home.css';
 import { useNavigate } from 'react-router-dom';
 
+
+function CaroImage(props) {
+  //console.log(props.img);
+  let img = props.img;
+  let active = props.active;
+  let classActive = "";
+  if (active === "1") {
+    classActive = " active";
+  }
+  console.log(img + ", " + active);
+  return(
+    <div className={"carousel-item " + classActive}>
+      <img src={img} className="d-block w-100" alt={img} />
+    </div>
+  );
+}
+
   // Header Component
   const Header = (props) => {
     let carouselImages = props.imgs;
-    let count = 0;
-    let carousel = carouselImages.forEach((image) => {
-      count++;
-      return(<CarouselImg img={image} active={count} key={count}/>);
-    });
+    let index = props.current % 3;
+    //console.log(carouselImages);
+    let carousel = <CaroImage img={carouselImages[index]} active="1"/>
+    console.log(carousel);
     return (
       <header>
         <div id="heading-carousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
@@ -28,20 +44,6 @@ import { useNavigate } from 'react-router-dom';
       </header>
     );
   };
-
-  function CarouselImg(props) {
-    let img = props.img;
-    let active = props.active;
-    let classActive = "";
-    if (active === 0) {
-      classActive = " active";
-    }
-    return(
-      <div className={"carousel-item" + classActive}>
-        <img src={img} className="d-block w-100" alt={img} />
-      </div>
-    );
-  }
 
 
   // Card Component
@@ -103,6 +105,17 @@ import { useNavigate } from 'react-router-dom';
 
   // Index Component
   function Index() {
+    const [myTime, setMyTime] = React.useState(0);
+
+    React.useEffect(() => {
+      // create a interval and get the id
+      const myInterval = setInterval(() => {
+        setMyTime((prevTime) => prevTime + 1);
+      }, 5000);
+      // clear out the interval using it id when unmounting the component
+      return () => clearInterval(myInterval);
+    }, []);
+
     const carouselImages = [
       'img/daniel-apodaca-WdoQio6HPVA-unsplash.jpg',
       'img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg',
@@ -110,7 +123,7 @@ import { useNavigate } from 'react-router-dom';
     ]
     return (
       <>
-        <Header imgs={carouselImages}/>
+        <Header imgs={carouselImages} current={myTime}/>
         <Main />
       </>
     );

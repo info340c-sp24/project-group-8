@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import '../css/analytics.css';
+import { useNavigate } from "react-router-dom";
 function AnalyticsContent() {
   return(
     <div className="row">
@@ -198,7 +199,14 @@ function AnalyticsContent() {
 }
 
 function Analytics(props) {
-  let userData = props.userData;
+  const navigate = useNavigate();
+  let user = props.userObject;
+  useEffect(() => {
+    if(user === null) {
+      navigate("/login");
+    }
+  });
+
   return (
     <>
       <header>
@@ -210,7 +218,7 @@ function Analytics(props) {
 
       <main>
         <div className="container">
-          <AnalyticsContent userData={userData}/>
+          <AnalyticsContent userData={user}/>
         </div>
       </main>
     </>

@@ -18,6 +18,8 @@ function Navigation() {
               <NavLink className="nav-link fw-bold current" to="/" id="home" style={isActive => {
                 if (isActive.isActive) {
                   return ({color:"chartreuse"})
+                } else {
+                  return ({color:"white"})
                 }
               }}>Home</NavLink>
             </li>
@@ -25,6 +27,8 @@ function Navigation() {
               <NavLink className="nav-link fw-bold" to="/recommendations" id="recs" style={isActive => {
                 if (isActive.isActive) {
                   return ({color:"chartreuse"})
+                } else {
+                  return ({color:"white"})
                 }
               }}>Recommendations</NavLink>
             </li>
@@ -32,6 +36,8 @@ function Navigation() {
               <NavLink className="nav-link fw-bold" to="/logs" id="logs" style={isActive => {
                 if (isActive.isActive) {
                   return ({color:"chartreuse"})
+                } else {
+                  return ({color:"white"})
                 }
               }}>Logs</NavLink>
             </li>
@@ -39,6 +45,8 @@ function Navigation() {
               <NavLink className="nav-link fw-bold" to="/analytics" id="analytics" style={isActive => {
                 if (isActive.isActive) {
                   return ({color:"chartreuse"})
+                } else {
+                  return ({color:"white"})
                 }
               }}>Analytics</NavLink>
             </li>
@@ -46,6 +54,8 @@ function Navigation() {
               <NavLink className="nav-link fw-bold" to="/login" id="login" style={isActive => {
                 if (isActive.isActive) {
                   return ({color:"chartreuse"})
+                } else {
+                  return ({color:"white"})
                 }
               }}>Login</NavLink>
             </li>

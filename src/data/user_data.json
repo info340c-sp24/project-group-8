@@ -3,9 +3,9 @@
     "user_id": "user123",
     "password": "123",
     "email": "user123@example.com",
-    "log": [
+    "logs": [
       {
-        "date": "27/03/2024",
+        "date": "3/27/2024",
         "net_calories": "1850",
         "food": [{
             "name": "food1",
@@ -82,7 +82,7 @@
         }
       },
       {
-        "date": "27/03/2024",
+        "date": "3/28/2024",
         "net_calories": "1850",
         "food": [{
             "name": "food1",
@@ -163,7 +163,7 @@
         }
       },
       {
-        "date": "27/03/2024",
+        "date": "3/29/2024",
         "net_calories": "1850",
         "food": [{
             "name": "food1",

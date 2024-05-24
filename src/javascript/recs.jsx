@@ -1,12 +1,18 @@
 // This file is to create static components for the recs.js page to put in app.js
-
+import { useNavigate } from 'react-router-dom';
 import '../css/recs.css'
-
-import React, { useState } from 'react';
+import React from 'react';
 //import axios from 'axios'; // Import axios for making HTTP requests for the api
 
 // Recommendations component
-const Recommendations = () => {
+const Recommendations = (props) => {
+  const navigate = useNavigate();
+  let user = props.userObject;
+  React.useEffect(() => {
+    if(user === null) {
+      navigate("/login");
+    }
+  });
     return (
       <>
         <header>

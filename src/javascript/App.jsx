@@ -4,6 +4,7 @@ import WorkoutLog from './workout-log';
 import Reccom from './recs';
 import Analytics from './analytics';
 import LogIn from './login';
+import Registration from './registration'
 import Nav from './navbar';
 import Footer from './footer';
 import {Route, Routes} from 'react-router-dom';
@@ -32,6 +33,9 @@ function App() {
 
             {/* if currentUrlPath ===  "analytics" */}
             <Route path="/analytics" element={<Analytics userObject={user}/>} />
+
+            {/* if currentUrlPath ===  "registration" */}
+            <Route path="/registration" element={<Registration userObject={user}/>} />
         </Routes>
         <Footer />
       </>

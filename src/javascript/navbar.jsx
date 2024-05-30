@@ -59,6 +59,15 @@ function Navigation() {
                 }
               }}>Login</NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link fw-bold" to="/registration" id="registration" style={isActive => {
+                if (isActive.isActive) {
+                  return ({color:"chartreuse"})
+                } else {
+                  return ({color:"white"})
+                }
+              }}>Register</NavLink>
+            </li>
           </ul>
         </div>
       </div>

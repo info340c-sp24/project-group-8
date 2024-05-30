@@ -30,7 +30,7 @@ function RenderLogin(props) {
       navigate("/");
     }
     else {
-      setErrorMessage('Username and/or password undetected.')
+      setErrorMessage('Username and/or password undetected. Please try again, or register.')
     }
   }
   return(

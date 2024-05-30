@@ -33,6 +33,10 @@ function RenderLogin(props) {
       setErrorMessage('Username and/or password undetected. Please try again, or register.')
     }
   }
+
+  function goRegister() {
+    navigate("/registration");
+  }
   return(
     <>
     <header>
@@ -60,6 +64,7 @@ function RenderLogin(props) {
                   </div>
                 </form>
                 <button className="btn mt-5 w-100" id="submit-btn" onClick={handleSubmit}>Login</button>
+                <button className="btn mt-5 w-100" id="submit-btn" onClick={goRegister}>Register</button>
               </div>
             </div>
           </div>

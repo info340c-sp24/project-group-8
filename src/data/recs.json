@@ -1,0 +1,257 @@
+{
+    "cut": [
+      {
+        "length": 1,
+        "exercise": [
+          { "name": "Running", "reps": 0, "sets": 0, "caloriesBurnt": 600, "type": "cardio" },
+          { "name": "Jump Rope", "reps": 0, "sets": 0, "caloriesBurnt": 500, "type": "cardio" },
+          { "name": "Burpees", "reps": 15, "sets": 4, "caloriesBurnt": 100, "type": "cardio" },
+          { "name": "Plank", "reps": 1, "sets": 3, "caloriesBurnt": 50, "type": "core" },
+          { "name": "Push-Ups", "reps": 20, "sets": 4, "caloriesBurnt": 100, "type": "strength" }
+        ]
+      },
+      {
+        "length": 2,
+        "exercise": [
+          { "name": "Rowing", "reps": 0, "sets": 0, "caloriesBurnt": 550, "type": "cardio" },
+          { "name": "Jumping Jacks", "reps": 100, "sets": 3, "caloriesBurnt": 300, "type": "cardio" },
+          { "name": "Mountain Climbers", "reps": 30, "sets": 4, "caloriesBurnt": 150, "type": "cardio" },
+          { "name": "Russian Twists", "reps": 20, "sets": 3, "caloriesBurnt": 80, "type": "core" },
+          { "name": "Dumbbell Rows", "reps": 12, "sets": 3, "caloriesBurnt": 120, "type": "strength" },
+          { "name": "Crunches", "reps": 25, "sets": 4, "caloriesBurnt": 80, "type": "core" }
+        ]
+      },
+      {
+        "length": 3,
+        "exercise": [
+          { "name": "Cycling", "reps": 0, "sets": 0, "caloriesBurnt": 650, "type": "cardio" },
+          { "name": "Jump Rope", "reps": 0, "sets": 0, "caloriesBurnt": 500, "type": "cardio" },
+          { "name": "High Knees", "reps": 50, "sets": 4, "caloriesBurnt": 150, "type": "cardio" },
+          { "name": "Leg Raises", "reps": 20, "sets": 4, "caloriesBurnt": 60, "type": "core" },
+          { "name": "Triceps Dips", "reps": 15, "sets": 3, "caloriesBurnt": 90, "type": "strength" },
+          { "name": "Plank", "reps": 1, "sets": 3, "caloriesBurnt": 50, "type": "core" }
+        ]
+      },
+      {
+        "length": 4,
+        "exercise": [
+          { "name": "Stair Climber", "reps": 0, "sets": 0, "caloriesBurnt": 550, "type": "cardio" },
+          { "name": "Jumping Jacks", "reps": 100, "sets": 3, "caloriesBurnt": 300, "type": "cardio" },
+          { "name": "Mountain Climbers", "reps": 30, "sets": 4, "caloriesBurnt": 150, "type": "cardio" },
+          { "name": "Bicycle Crunches", "reps": 25, "sets": 4, "caloriesBurnt": 100, "type": "core" },
+          { "name": "Pull-Ups", "reps": 10, "sets": 3, "caloriesBurnt": 120, "type": "strength" },
+          { "name": "Russian Twists", "reps": 20, "sets": 3, "caloriesBurnt": 80, "type": "core" }
+        ]
+      },
+      {
+        "length": 5,
+        "exercise": [
+          { "name": "Running", "reps": 0, "sets": 0, "caloriesBurnt": 600, "type": "cardio" },
+          { "name": "Jump Rope", "reps": 0, "sets": 0, "caloriesBurnt": 500, "type": "cardio" },
+          { "name": "Squat Jumps", "reps": 20, "sets": 4, "caloriesBurnt": 120, "type": "cardio" },
+          { "name": "Side Planks", "reps": 30, "sets": 3, "caloriesBurnt": 60, "type": "core" },
+          { "name": "Shoulder Presses", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+          { "name": "Leg Raises", "reps": 20, "sets": 4, "caloriesBurnt": 60, "type": "core" }
+        ]
+      },
+      {
+        "length": 6,
+        "exercise": [
+          { "name": "Elliptical", "reps": 0, "sets": 0, "caloriesBurnt": 600, "type": "cardio" },
+          { "name": "Jumping Jacks", "reps": 100, "sets": 3, "caloriesBurnt": 300, "type": "cardio" },
+          { "name": "High Knees", "reps": 50, "sets": 4, "caloriesBurnt": 150, "type": "cardio" },
+          { "name": "Plank", "reps": 1, "sets": 3, "caloriesBurnt": 50, "type": "core" },
+          { "name": "Lat Pulldowns", "reps": 12, "sets": 3, "caloriesBurnt": 120, "type": "strength" },
+          { "name": "Bicycle Crunches", "reps": 25, "sets": 4, "caloriesBurnt": 100, "type": "core" }
+        ]
+      },
+      {
+        "length": 7,
+        "exercise": [
+          { "name": "Rowing", "reps": 0, "sets": 0, "caloriesBurnt": 550, "type": "cardio" },
+          { "name": "Jump Rope", "reps": 0, "sets": 0, "caloriesBurnt": 500, "type": "cardio" },
+          { "name": "Burpees", "reps": 15, "sets": 4, "caloriesBurnt": 100, "type": "cardio" },
+          { "name": "Leg Raises", "reps": 20, "sets": 4, "caloriesBurnt": 60, "type": "core" },
+          { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 150, "type": "strength" },
+          { "name": "Side Planks", "reps": 30, "sets": 3, "caloriesBurnt": 60, "type": "core" }
+        ]
+      },
+      {
+        "length": 8,
+        "exercise": [
+          { "name": "Stair Climber", "reps": 0, "sets": 0, "caloriesBurnt": 550, "type": "cardio" },
+          { "name": "Jump Rope", "reps": 0, "sets": 0, "caloriesBurnt": 500, "type": "cardio" },
+          { "name": "Squat Jumps", "reps": 20, "sets": 4, "caloriesBurnt": 120, "type": "cardio" },
+          { "name": "Russian Twists", "reps": 20, "sets": 3, "caloriesBurnt": 80, "type": "core" },
+          { "name": "Pull-Ups", "reps": 10, "sets": 3, "caloriesBurnt": 120, "type": "strength" },
+          { "name": "Bicycle Crunches", "reps": 25, "sets": 4, "caloriesBurnt": 100, "type": "core" }
+        ]
+      },
+      {
+        "length": 9,
+        "exercise": [
+          { "name": "Cycling", "reps": 0, "sets": 0, "caloriesBurnt": 650, "type": "cardio" },
+          { "name": "Jumping Jacks", "reps": 100, "sets": 3, "caloriesBurnt": 300, "type": "cardio" },
+          { "name": "Burpees", "reps": 15, "sets": 4, "caloriesBurnt": 100, "type": "cardio" },
+          { "name": "Leg Raises", "reps": 20, "sets": 4, "caloriesBurnt": 60, "type": "core" },
+          { "name": "Shoulder Presses", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+          { "name": "Side Planks", "reps": 30, "sets": 3, "caloriesBurnt": 60, "type": "core" }
+        ]
+      },
+      {
+        "length": 10,
+        "exercise": [
+          { "name": "Rowing", "reps": 0, "sets": 0, "caloriesBurnt": 550, "type": "cardio" },
+          { "name": "Jump Rope", "reps": 0, "sets": 0, "caloriesBurnt": 500, "type": "cardio" },
+          { "name": "Mountain Climbers", "reps": 30, "sets": 4, "caloriesBurnt": 150, "type": "cardio" },
+          { "name": "Plank", "reps": 1, "sets": 3, "caloriesBurnt": 50, "type": "core" },
+          { "name": "Dumbbell Rows", "reps": 12, "sets": 3, "caloriesBurnt": 120, "type": "strength" },
+          { "name": "Bicycle Crunches", "reps": 25, "sets": 4, "caloriesBurnt": 100, "type": "core" }
+        ]
+      },
+      {
+        "length": 11,
+        "exercise": [
+          { "name": "Stair Climber", "reps": 0, "sets": 0, "caloriesBurnt": 550, "type": "cardio" },
+          { "name": "Jumping Jacks", "reps": 100, "sets": 3, "caloriesBurnt": 300, "type": "cardio" },
+          { "name": "High Knees", "reps": 50, "sets": 4, "caloriesBurnt": 150, "type": "cardio" },
+          { "name": "Russian Twists", "reps": 20, "sets": 3, "caloriesBurnt": 80, "type": "core" },
+          { "name": "Triceps Dips", "reps": 15, "sets": 3, "caloriesBurnt": 90, "type": "strength" },
+          { "name": "Leg Raises", "reps": 20, "sets": 4, "caloriesBurnt": 60, "type": "core" }
+        ]
+      },
+      {
+        "length": 12,
+        "exercise": [
+          { "name": "Elliptical", "reps": 0, "sets": 0, "caloriesBurnt": 600, "type": "cardio" },
+          { "name": "Jump Rope", "reps": 0, "sets": 0, "caloriesBurnt": 500, "type": "cardio" },
+          { "name": "Squat Jumps", "reps": 20, "sets": 4, "caloriesBurnt": 120, "type": "cardio" },
+          { "name": "Plank", "reps": 1, "sets": 3, "caloriesBurnt": 50, "type": "core" },
+          { "name": "Pull-Ups", "reps": 10, "sets": 3, "caloriesBurnt": 120, "type": "strength" },
+          { "name": "Bicycle Crunches", "reps": 25, "sets": 4, "caloriesBurnt": 100, "type": "core" }
+        ]
+        
+      }
+    ],
+    "bulk": [
+        {
+          "length": 1,
+          "exercise": [
+            { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+            { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" }
+          ]
+        },
+        {
+          "length": 2,
+          "exercise": [
+            { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+            { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+            { "name": "Shoulder Press", "reps": 10, "sets": 3, "caloriesBurnt": 150, "type": "strength" }
+          ]
+        },
+        {
+          "length": 3,
+          "exercise": [
+            { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+            { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+            { "name": "Leg Press", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" }
+          ]
+        },
+        {
+          "length": 4,
+          "exercise": [
+            { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+            { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+            { "name": "Shoulder Press", "reps": 10, "sets": 3, "caloriesBurnt": 150, "type": "strength" }
+          ]
+        },
+        {
+          "length": 5,
+          "exercise": [
+            { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+            { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+            { "name": "Leg Press", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" }
+          ]
+        },
+        {
+          "length": 6,
+          "exercise": [
+            { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+            { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+            { "name": "Shoulder Press", "reps": 10, "sets": 3, "caloriesBurnt": 150, "type": "strength" }
+          ]
+        },
+        {
+          "length": 7,
+          "exercise": [
+            { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+            { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+            { "name": "Leg Press", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" }
+          ]
+        },
+        {
+          "length": 8,
+          "exercise": [
+            { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+            { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+            { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+            { "name": "Shoulder Press", "reps": 10, "sets": 3, "caloriesBurnt": 150, "type": "strength" }
+          ]
+        },
+        {
+            "length": 9,
+            "exercise": [
+              { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+              { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+              { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+              { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+              { "name": "Leg Press", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" }
+            ]
+          },
+          {
+            "length": 10,
+            "exercise": [
+              { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+              { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+              { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+              { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+              { "name": "Shoulder Press", "reps": 10, "sets": 3, "caloriesBurnt": 150, "type": "strength" }
+            ]
+          },
+          {
+            "length": 11,
+            "exercise": [
+              { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+              { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+              { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+              { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+              { "name": "Leg Press", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" }
+            ]
+          },
+          {
+            "length": 12,
+            "exercise": [
+              { "name": "Squats", "reps": 12, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+              { "name": "Deadlifts", "reps": 10, "sets": 3, "caloriesBurnt": 250, "type": "strength" },
+              { "name": "Bench Press", "reps": 10, "sets": 3, "caloriesBurnt": 200, "type": "strength" },
+              { "name": "Bicep Curls", "reps": 12, "sets": 3, "caloriesBurnt": 100, "type": "strength" },
+              { "name": "Shoulder Press", "reps": 10, "sets": 3, "caloriesBurnt": 150, "type": "strength" }
+            ]
+          }
+        ]
+}

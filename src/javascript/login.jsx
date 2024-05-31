@@ -4,21 +4,22 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
 
 function RenderLogin(props) {
-  let allData;
+  const [allData, setAllData] = React.useState([]);
   //effect hook
   React.useEffect(() => {
     const db = getDatabase();
-    const userData = ref(db, "/test");
-    console.log(userData);
+    const userData = ref(db, '/user-data');
     //returns a function that will "unregister" (turn off) the listener
     const unregisterFunction = onValue(userData, (snapshot) => {
-      const allData = snapshot.val()
-      console.log(allData);
+      const value = snapshot.val();
+      setAllData(value);
     });
 
-    return () => {
+    function checkOut() {
       unregisterFunction();
     };
+
+    return checkOut;
   })
 
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function RenderLogin(props) {
     console.log(currentUser);
     if (currentUser.length === 1) {
       console.log(currentUser[0]);
-      userUpdate(currentUser[0]);
+      userUpdate(currentUser[0].user_id);
       navigate("/");
     }
     else {

@@ -12,8 +12,8 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 function App() {
   const [user, setUser] = React.useState(null);
-  function userUpdate(userObject) {
-    setUser(userObject);
+  function userUpdate(user) {
+    setUser(user);
   }
     return (
       <>

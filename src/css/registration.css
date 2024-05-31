@@ -2,7 +2,10 @@
 body {
     font-family: 'Jura', sans-serif;
   }
-  
+
+#userID {
+  color: black;
+}
   .recs-form {
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     padding: 20px;
@@ -11,22 +14,21 @@ body {
     margin: 0 auto; /* Center the form horizontally */
     color: chartreuse;
   }
-  
+
   #register {
     border: 3px solid chartreuse;
   }
-  
+
   #submit-btn {
     background-color: chartreuse;
     color: black;
   }
-  
+
   #submit-btn:hover {
     background-color: darkgreen;
     color:white;
   }
-  
+
   #error-msg {
     color:crimson;
   }
-  

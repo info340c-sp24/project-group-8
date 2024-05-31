@@ -1,14 +1,40 @@
 import React from "react";
 import '../css/registration.css';
+import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
-import allData from '../data/user_data.json';
 
 function RenderRegistration(props) {
+  const [allData, setAllData] = React.useState([]);
+  const db = getDatabase();
+  const userData = ref(db, '/user-data');
+  //effect hook
+  React.useEffect(() => {
+    const dbTemp = getDatabase();
+  const userDataTemp = ref(dbTemp, '/user-data');
+    //returns a function that will "unregister" (turn off) the listener
+    const unregisterFunction = onValue(userDataTemp, (snapshot) => {
+      const value = snapshot.val();
+      setAllData(value);
+    });
+
+    function checkOut() {
+      unregisterFunction();
+    };
+
+    return checkOut;
+  })
+
   const navigate = useNavigate();
+  const[userID, setUserID] = React.useState('');
   const[userEmail, setUserEmail] = React.useState('');
   const[userPass, setUserPass] = React.useState('');
   const[confirmPass, setConfirmPass] = React.useState('');
   const[ErrorMessage, setErrorMessage] = React.useState('');
+
+  function handleIDChange(event) {
+    let content = event.target.value;
+    setUserID(content);
+  }
 
   function handleEmailChange(event) {
     let content = event.target.value;
@@ -28,11 +54,21 @@ function RenderRegistration(props) {
   function handleSubmit() {
     if (userPass !== confirmPass) {
       setErrorMessage("Passwords do not match");
-      return;
+    } else
+    if (userID === '' || userEmail === '' || userPass === '' || confirmPass === '') {
+      setErrorMessage("Input not valid (must not be empty)");
+    } else {
+      console.log(allData);
+      let currentUser = allData.filter((user_data) => (user_data.email === userEmail && user_data.password === userPass && user_data.user_id === userID))
+      console.log(currentUser);
+      if (currentUser.length === 0) {
+        let newUser = { user_id:userID, email: userEmail, password: userPass };
+        firebasePush(userData, newUser);
+      } else {
+        setErrorMessage("User specifications already exists. Please login instead.");
+      }
     }
 
-    let newUser = { email: userEmail, password: userPass };
-    allData.push(newUser);
 
   }
 
@@ -41,7 +77,7 @@ function RenderRegistration(props) {
     <header>
         <div className="container text-center mt-5">
           <h1 className="display-3">Register for <span id="title" className="nowrap">My Fitness UI</span></h1>
-          <h2 className="fst-italic opacity-50 mt-4">"The old that is strong does not wither"</h2>
+          <h2 className="fst-italic opacity-50 mt-4">"The brotherhood welcomes thee."</h2>
         </div>
     </header>
     <main>
@@ -54,6 +90,10 @@ function RenderRegistration(props) {
               <div className="card-body">
                 <form className="recs-form">
                   <div className="form-group">
+                    <label htmlFor="userID" className="nowrap">User ID</label>
+                    <input type="text" className="form-control mt-3" id="userID" placeholder="Enter a valid ID" onChange={handleIDChange}></input>
+                  </div>
+                  <div className="form-group mt-4">
                     <label htmlFor="email" className="nowrap">Email</label>
                     <input type="email" className="form-control mt-3" id="email" placeholder="Enter your email" onChange={handleEmailChange}></input>
                   </div>

@@ -1,9 +1,26 @@
 import React from "react";
 import '../css/login.css';
-import allData from '../data/user_data.json'
+import { getDatabase, ref, onValue } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
 
 function RenderLogin(props) {
+  let allData;
+  //effect hook
+  React.useEffect(() => {
+    const db = getDatabase();
+    const userData = ref(db, "/test");
+    console.log(userData);
+    //returns a function that will "unregister" (turn off) the listener
+    const unregisterFunction = onValue(userData, (snapshot) => {
+      const allData = snapshot.val()
+      console.log(allData);
+    });
+
+    return () => {
+      unregisterFunction();
+    };
+  })
+
   const navigate = useNavigate();
   let userUpdate = props.userUpdateCallback;
   const[userEmail, setUserEmail] = React.useState('');

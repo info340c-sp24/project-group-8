@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/home.css';
 import { useNavigate } from 'react-router-dom';
+import _ from 'lodash';
 
 
 function CaroImage(props) {
@@ -22,9 +23,9 @@ function CaroImage(props) {
   // Header Component
   const Header = (props) => {
     let greet = "";
-    let user = props.userObject;
-    if (user !== null) {
-      greet = "Welcome, " + user.user_id + "!";
+    let user = props.userID;
+    if (!_.isNull(user)) {
+      greet = "Welcome, " + user + "!";
     }
     let carouselImages = props.imgs;
     let index = props.current % 3;
@@ -104,6 +105,7 @@ function CaroImage(props) {
 
   // Index Component
   function Index(props) {
+    console.log(props.userID);
     const [myTime, setMyTime] = React.useState(0);
 
     React.useEffect(() => {
@@ -122,7 +124,7 @@ function CaroImage(props) {
     ]
     return (
       <>
-        <Header imgs={carouselImages} current={myTime} userObject={props.userObject}/>
+        <Header imgs={carouselImages} current={myTime} userID={props.userID}/>
         <Main />
       </>
     );

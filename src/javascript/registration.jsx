@@ -1,6 +1,7 @@
 import React from "react";
+import _ from "lodash";
 import '../css/registration.css';
-import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database';
+import { getDatabase, ref, onValue, child, push as firebasePush, set as firebaseSet } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
 
 function RenderRegistration(props) {
@@ -10,11 +11,21 @@ function RenderRegistration(props) {
   //effect hook
   React.useEffect(() => {
     const dbTemp = getDatabase();
-  const userDataTemp = ref(dbTemp, '/user-data');
+    const userDataTemp = ref(dbTemp, '/user-data');
     //returns a function that will "unregister" (turn off) the listener
     const unregisterFunction = onValue(userDataTemp, (snapshot) => {
-      const value = snapshot.val();
-      setAllData(value);
+      const allObjects = snapshot.val();
+      let allArray = null;
+      if (!_.isNull(allObjects)) {
+        const allKeys = Object.keys(allObjects);
+        allArray = allKeys.map((key) => {
+          const singleTaskCopy = {...allObjects[key]}; //copy element at that key
+          singleTaskCopy.key = key; //locally save the key string as an "id" for later
+          return singleTaskCopy; //the transformed object to store in the array
+        });
+      }
+      //console.log(allArray);
+      setAllData(allArray)
     });
 
     function checkOut() {
@@ -23,7 +34,6 @@ function RenderRegistration(props) {
 
     return checkOut;
   })
-
   const navigate = useNavigate();
   const[userID, setUserID] = React.useState('');
   const[userEmail, setUserEmail] = React.useState('');
@@ -59,17 +69,19 @@ function RenderRegistration(props) {
       setErrorMessage("Input not valid (must not be empty)");
     } else {
       console.log(allData);
-      let currentUser = allData.filter((user_data) => (user_data.email === userEmail && user_data.password === userPass && user_data.user_id === userID))
+      let currentUser = [];
+      if(!_.isNull(allData)) {
+        currentUser = allData.filter((user_data) => (user_data.email === userEmail && user_data.user_id === userID))
+      }
       console.log(currentUser);
       if (currentUser.length === 0) {
-        let newUser = { user_id:userID, email: userEmail, password: userPass };
-        firebasePush(userData, newUser);
+        let newUser = { user_id:userID, email: userEmail, password: userPass, logs: {}};
+        firebaseSet(child(userData,userID), newUser);
+        navigate("/login");
       } else {
         setErrorMessage("User specifications already exists. Please login instead.");
       }
     }
-
-
   }
 
   return(

@@ -20,22 +20,22 @@ function App() {
         <Nav />
         <Routes> {/* the collection of routes to match */}
             {/* if currentUrlPath === "home" */}
-            <Route path="/" element={<Home userObject={user}/>} />
+            <Route path="/" element={<Home userID={user}/>} />
 
             {/* if currentUrlPath ===  "about" */}
-            <Route path="/recommendations" element={<Reccom userObject={user}/>} />
+            <Route path="/recommendations" element={<Reccom userID={user}/>} />
 
             {/* if currentUrlPath ===  "login" */}
             <Route path="/login" element={<LogIn userUpdateCallback={userUpdate}/>} />
 
             {/* if currentUrlPath ===  "workout-logs" */}
-            <Route path="/logs" element={<WorkoutLog userObject={user} userUpdateCallback={userUpdate}/>} />
+            <Route path="/logs" element={<WorkoutLog userID={user}/>} />
 
             {/* if currentUrlPath ===  "analytics" */}
-            <Route path="/analytics" element={<Analytics userObject={user}/>} />
+            <Route path="/analytics" element={<Analytics userID={user}/>} />
 
             {/* if currentUrlPath ===  "registration" */}
-            <Route path="/registration" element={<Registration userObject={user}/>} />
+            <Route path="/registration" element={<Registration />} />
         </Routes>
         <Footer />
       </>

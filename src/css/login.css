@@ -26,6 +26,15 @@ body {
   color:white;
 }
 
+#other-btn {
+  background-color: black;
+  color:chartreuse;
+}
+
+#other-btn:hover {
+  color:aqua;
+}
+
 #error-msg {
   color:crimson;
 }

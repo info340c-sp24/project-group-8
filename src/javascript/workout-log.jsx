@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import _ from 'lodash';
+import { getDatabase, ref, onValue, child, push as firebasePush, set as firebaseSet } from 'firebase/database';
 import '../css/logs.css'
 
 function LogCard(props) {
@@ -20,11 +22,12 @@ function LogCard(props) {
 }
 
 function WorkoutLog(props) {
-    const user = props.userObject
-    console.log(user);
-    const updateUser = props.userUpdateCallback
+    const user = props.userID;
+    const db = getDatabase();
+    const currentUserLogs = ref(db, '/user-data/'+user+"/logs");
     let todayDate = new Date();
     const [logData,setLogData] = useState([]);
+    const [logDate, setLogDate] = useState([]);
     const [currDate, setCurrDate] = useState({
         year: todayDate.getFullYear(),
         month: todayDate.getMonth() + 1,
@@ -37,29 +40,60 @@ function WorkoutLog(props) {
             navigate("/login");
         }
         else {
-            setLogData(user.logs);
+            //returns a function that will "unregister" (turn off) the listener
+            const unregisterFunction = onValue(currentUserLogs, (snapshot) => {
+            const allObjects = snapshot.val();
+            let allArray = [];
+            if (!_.isNull(allObjects)) {
+                const allKeys = Object.keys(allObjects);
+                allArray = allKeys.map((key) => {
+                    const singleTaskCopy = {...allObjects[key]}; //copy element at that key
+                    singleTaskCopy.key = key; //locally save the key string as an "id" for later
+                    return singleTaskCopy; //the transformed object to store in the array
+                });
+            }
+            //console.log(allArray);
+            setLogData(allArray);
+            });
+
+            function checkOut() {
+                unregisterFunction();
+            };
+
+            return checkOut;
         }
     });
-    let logDate = logData.filter((dateLog) => {
-        console.log(dateLog);
-        console.log(currDateString);
-        console.log(dateLog.date === currDateString);
+    let tempLogDate = logData.filter((dateLog) => {
+        // console.log(dateLog);
+        // console.log(currDateString);
+        // console.log(dateLog.date === currDateString);
         return (dateLog.date === currDateString);
     });
-    console.log(logDate);
+
+    //console.log(tempLogDate);
+    setLogDate(tempLogDate);
     let workoutLogCard = [];
     let count = 0;
     if (logDate.length > 0) {
         let workoutLogDate = logDate[0].workout;
-        console.log(workoutLogDate);
-        if (workoutLogDate.length > 0) {
-            workoutLogCard = workoutLogDate.map((exerciseLog) => {
+        let workoutArray = [];
+        if (!_.isNull(workoutLogDate)) {
+            const allKeys = Object.keys(workoutLogDate);
+            workoutArray = allKeys.map((key) => {
+                const singleTaskCopy = {...workoutLogDate[key]}; //copy element at that key
+                singleTaskCopy.key = key; //locally save the key string as an "id" for later
+                return singleTaskCopy; //the transformed object to store in the array
+            });
+        }
+        console.log(workoutArray);
+        if (workoutArray.length > 0) {
+            workoutLogCard = workoutArray.map((exerciseLog) => {
                 console.log(exerciseLog);
                 count++;
                 console.log(<LogCard log={exerciseLog} key={count}/>);
                 return(<LogCard log={exerciseLog}/>);
             })
-            console.log(workoutLogCard);
+            //console.log(workoutLogCard);
         }
     }
     const [formData, setFormData] = useState({
@@ -72,7 +106,13 @@ function WorkoutLog(props) {
     });
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.id]: e.target.value });
+        console.log(formData);
+        if (e.target.id === "date") {
+            setFormData({ ...formData, [e.target.id]: e.target.valueAsDate })
+        } else {
+            setFormData({ ...formData, [e.target.id]: e.target.value });
+        }
+        console.log(formData);
     };
 
     function checkObjectKeys (object) {
@@ -85,6 +125,7 @@ function WorkoutLog(props) {
         });
         return (truthValue && keys.length > 0);
     }
+
     function handleSubmit () {
         if(checkObjectKeys(formData)) {
             let logObject = {
@@ -97,29 +138,33 @@ function WorkoutLog(props) {
                 },
                 type:formData.type
             };
-            let logDate = {
-                year: logData.date.getFullYear(),
-                month: logData.date.getMonth() + 1,
-                date: logData.date.getDate()
+            console.log(logObject);
+            console.log(formData.date);
+            let logDate = formData.date;
+            let logDateData = {
+                year: logDate.getFullYear(),
+                month: logDate.getMonth() + 1,
+                date: logDate.getDate() + 1
             };
-            let logDateString = logDate.month + "/" + logDate.date + "/" + logDate.year ;
+            let logDateString = logDateData.month + "/" + logDateData.date + "/" + logDateData.year;
+            let logDateName = logDateData.month + "-" + logDateData.date + "-" + logDateData.year
+            console.log(logDateData);
+            console.log(logDateString);
             let logCopy = logData.map(x => x);
-            let targetDate = logCopy.filter((log) => {
-                return(log.date === logDateString)
-            });
+            let targetDate = logCopy.filter((log) => (log.date === logDateString));
             let currDateLog = null;
             if (targetDate.length > 1) {
-                 currDateLog = targetDate[0];
+                 currDateLog = child(currentUserLogs,logDateString);
             } else {
                  currDateLog = {
                     date: logDateString,
                     workout:[],
                     food:[]
                 };
-                currDateLog.workout.push(logObject);
-                logCopy.push(currDateLog);
+                firebaseSet(child(currentUserLogs,logDateName), currDateLog);
+                currDateLog = child(currentUserLogs,logDateName);
             }
-            setLogData(logCopy);
+            firebasePush(child(currDateLog,"workout"), logObject);
             setFormData({
                 exercise: null,
                 type: null,
@@ -128,8 +173,6 @@ function WorkoutLog(props) {
                 sets: null,
                 reps: null
             });
-            let userCopy = { ...user, "logs": logData};
-            updateUser(userCopy);
         }
     };
 
@@ -149,7 +192,7 @@ function WorkoutLog(props) {
         setCurrDate({
             year: contentDate.getFullYear(),
             month: contentDate.getMonth() + 1,
-            date: contentDate.getDate() + 1
+            date: contentDate.getDate()
         });
     }
     return (

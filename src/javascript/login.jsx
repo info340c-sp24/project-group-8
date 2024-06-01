@@ -2,7 +2,7 @@ import React from "react";
 import '../css/login.css';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
-
+import _ from 'lodash';
 function RenderLogin(props) {
   const [allData, setAllData] = React.useState([]);
   //effect hook
@@ -11,8 +11,18 @@ function RenderLogin(props) {
     const userData = ref(db, '/user-data');
     //returns a function that will "unregister" (turn off) the listener
     const unregisterFunction = onValue(userData, (snapshot) => {
-      const value = snapshot.val();
-      setAllData(value);
+      const allObjects = snapshot.val();
+      let allArray = null;
+      if (!_.isNull(allObjects)) {
+        const allKeys = Object.keys(allObjects);
+        allArray = allKeys.map((key) => {
+          const singleTaskCopy = {...allObjects[key]}; //copy element at that key
+          singleTaskCopy.key = key; //locally save the key string as an "id" for later
+          return singleTaskCopy; //the transformed object to store in the array
+        });
+      }
+      //console.log(allArray);
+      setAllData(allArray)
     });
 
     function checkOut() {
@@ -44,6 +54,7 @@ function RenderLogin(props) {
     console.log(currentUser);
     if (currentUser.length === 1) {
       console.log(currentUser[0]);
+      console.log(currentUser[0].user_id)
       userUpdate(currentUser[0].user_id);
       navigate("/");
     }
@@ -82,7 +93,7 @@ function RenderLogin(props) {
                   </div>
                 </form>
                 <button className="btn mt-5 w-100" id="submit-btn" onClick={handleSubmit}>Login</button>
-                <button className="btn mt-5 w-100" id="submit-btn" onClick={goRegister}>Register</button>
+                <button className="btn mt-5 w-100" id="other-btn" onClick={goRegister}>Click here to register</button>
               </div>
             </div>
           </div>

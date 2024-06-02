@@ -7,6 +7,10 @@ input[type="text"] {
   color: white;
 }
 
+#workoutForm input, #foodForm input {
+  color: black;
+}
+
 input.form-control {
   background-color: #ffffff;
 }
@@ -18,16 +22,37 @@ input.form-control {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.log-btn {
+.foo-logs .card {
+  border: 5px solid orange;
+  color: orange;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wo-log-btn {
   background-color:crimson;
   color: black;
 }
 
-.log-btn:hover {
+.wo-log-btn:hover {
     background-color:maroon;
     color: white;
 }
 
 .wo-logs {
   color:crimson;
+}
+
+.foo-logs{
+  color:orange;
+}
+
+.foo-log-btn {
+  background-color:orange;
+  color: black;
+}
+
+.foo-log-btn:hover {
+  background-color:darkorange;
+  color: white;
 }

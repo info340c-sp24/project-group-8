@@ -4,7 +4,8 @@ import WorkoutLog from './workout-log';
 import Reccom from './recs';
 import Analytics from './analytics';
 import LogIn from './login';
-import Registration from './registration'
+import FoodLog from './food-log';
+import Registration from './registration';
 import Nav from './navbar';
 import Footer from './footer';
 import {Route, Routes} from 'react-router-dom';
@@ -28,8 +29,11 @@ function App() {
             {/* if currentUrlPath ===  "login" */}
             <Route path="/login" element={<LogIn userUpdateCallback={userUpdate}/>} />
 
-            {/* if currentUrlPath ===  "workout-logs" */}
-            <Route path="/logs" element={<WorkoutLog userID={user}/>} />
+            {/* if currentUrlPath ===  "logs" */}
+            <Route path="/logs">
+              <Route path='/logs/workout' element={<WorkoutLog userID={user}/>}/>
+              <Route path='/logs/food' element={<FoodLog userID={user}/>}/>
+            </Route>
 
             {/* if currentUrlPath ===  "analytics" */}
             <Route path="/analytics" element={<Analytics userID={user}/>} />

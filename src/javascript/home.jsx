@@ -89,7 +89,7 @@ function CaroImage(props) {
               id="motivate"
               title="Motivate"
               description="Log your progress and see your track record. Knowledge is power."
-              onClick={() => toPage('logs')}
+              onClick={() => toPage('logs/workout')}
             />
             <Card
               id="evaluate"

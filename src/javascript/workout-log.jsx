@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import _ from 'lodash';
-import { getDatabase, ref, onValue, child, push as firebasePush, set as firebaseSet } from 'firebase/database';
+import { getDatabase, ref, onValue, push as firebasePush} from 'firebase/database';
 import '../css/logs.css'
 
 function LogCard(props) {
@@ -67,8 +67,10 @@ function WorkoutLog(props) {
         console.log("Seeding Today Date")
         let todayDate = new Date();
         console.log(todayDate);
+        console.log(todayDate.getMonth());
         todayDate = new Date(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate());
         console.log(todayDate);
+        console.log(todayDate.getMonth());
         let tempTodayDate = {
             year: todayDate.getFullYear(),
             month: todayDate.getMonth() + 1,

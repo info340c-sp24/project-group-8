@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import '../css/registration.css';
-import { getDatabase, ref, onValue, child, push as firebasePush, set as firebaseSet, off } from 'firebase/database';
+import { getDatabase, ref, onValue, child, set as firebaseSet } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
 
 function RenderRegistration(props) {

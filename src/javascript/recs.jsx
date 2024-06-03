@@ -1,18 +1,78 @@
 // This file is to create static components for the recs.js page to put in app.js
 import { useNavigate } from 'react-router-dom';
 import '../css/recs.css'
-import React from 'react';
+import _ from 'lodash';
+import React, { useState } from 'react';
+import { getDatabase, ref, onValue, child } from 'firebase/database';
 //import axios from 'axios'; // Import axios for making HTTP requests for the api
 
 // Recommendations component
 const Recommendations = (props) => {
+  const db = getDatabase();
+  const staticData = 'static-data/recs';
+  const [params, setParams] = useState({
+    type: null,
+    length: null
+  })
+  const [answerData,setAnswerData] = useState([]);
   const navigate = useNavigate();
-  let user = props.userObject;
+  let user = props.userID;
   React.useEffect(() => {
     if(user === null) {
       navigate("/login");
     }
   });
+
+  let answer = "";
+  function handleChange (e) {
+    console.log("Handle Change")
+    console.log(e.target.id + ": "+ e.target.value);
+    setParams({ ...params, [e.target.id]: e.target.value});
+  }
+
+  function checkObjectKeys (object) {
+    let keys = Object.keys(object);
+    let truthValue = true;
+    keys.forEach((key) => {
+        if(_.isNull(object[key])) {
+            truthValue = false;
+        }
+    });
+    return (truthValue && keys.length > 0);
+  }
+
+  function handleSubmit() {
+    console.log("Form Submit");
+    console.log("No null:" + checkObjectKeys(params));
+    if(checkObjectKeys(params)) {
+      let targetData = staticData + '/' + params.type;
+      let targetArray = [];
+      let targetRef = ref(db, targetData);
+      onValue(targetRef, (snapshot) => {
+        const allObjects = snapshot.val();
+        if (!_.isNull(allObjects)) {
+            console.log("DB Connection success. Seeding allData.")
+            const allKeys = Object.keys(allObjects);
+            targetArray = allKeys.map((key) => {
+                const singleTaskCopy = {...allObjects[key]}; //copy element at that key
+                singleTaskCopy.key = key; //locally save the key string as an "id" for later
+                return singleTaskCopy; //the transformed object to store in the array
+            });
+            console.log(targetArray);
+        }
+      });
+      targetArray = targetArray.filter((responseData)=>(_.isEqual(responseData.length, params.length)));
+      targetArray = targetArray[0].exercise;
+      let allKeys = Object.keys(targetArray);
+      targetArray = allKeys.map((key) => {
+        const singleTaskCopy = {...targetArray[key]}; //copy element at that key
+        singleTaskCopy.key = key; //locally save the key string as an "id" for later
+        return singleTaskCopy; //the transformed object to store in the array
+      });
+
+    }
+  }
+
     return (
       <>
         <header>
@@ -27,10 +87,10 @@ const Recommendations = (props) => {
             <div className="col-10 col-lg-8">
               <div className="card w-100 ml-3 mt-5 p-5 pt-2" id="recommendations-card">
                 <div className="card-body text-center text-lg-start">
-                  <h2 className="display-3 fw-bold text-center" id="recs-question">Your question here</h2>
+                  <h2 className="display-3 fw-bold text-center" id="recs-question">Your Workout Plan</h2>
                   <div className="row text-center pt-5" >
                     <div className="col-12 mt-5 mb-5">
-                      <h3 className="display-5 fw-bold" id="recs-answer">Your answer will go here</h3>
+                      <h3 className="display-5 fw-bold" id="recs-answer">{answerData}</h3>
                     </div>
                     <div className="col-12 mt-5">
                       <form className="recs-form">

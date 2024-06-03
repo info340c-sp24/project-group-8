@@ -96,13 +96,16 @@ const Recommendations = (props) => {
                     <form className="recs-form" onSubmit={handleSubmit}>
                       <div className="form-group">
                         <label htmlFor="fitness-goal"><h3 className="display-5 fw-bold">Ask Here!</h3></label>
-                        <div className="mb-5 mt-3" style={{ display: 'flex', alignItems: 'center' }}>
+                        <div className="mb-5 mt-3 row">
+                          <div className="col-12 col-md-6">
                           <span className="recs-form skyblue">I want to</span>
                           <select className="form-control mx-2" id="type" onChange={handleChange} value={params.type} style={{ width: 'auto', display: 'inline-block' }}>
                             <option value="" disabled>Select goal</option>
                             <option value="cut">cut</option>
                             <option value="bulk">bulk</option>
                           </select>
+                          </div>
+                          <div className="col-12 col-md-6">
                           <span>for</span>
                           <select className="form-control mx-2" id="length" onChange={handleChange} value={params.length} style={{ width: 'auto', display: 'inline-block' }}>
                             <option value="" disabled>Select duration (months)</option>
@@ -111,6 +114,7 @@ const Recommendations = (props) => {
                             ))}
                           </select>
                           <span>months</span>
+                          </div>
                         </div>
                       </div>
                       <button type="submit" className="btn w-100 fw-bold" id="recs-submit">Submit</button>

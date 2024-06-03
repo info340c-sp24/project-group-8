@@ -6,24 +6,49 @@ import React, { useState } from 'react';
 import { getDatabase, ref, onValue, child } from 'firebase/database';
 //import axios from 'axios'; // Import axios for making HTTP requests for the api
 
+function RecsCard(props) {
+  let log = props.exercise;
+  return (
+    <div className="col-12 mt-2 mb-3 text-center ">
+        <div className="card mx-5 pb-3 recommendations-card-answer">
+            <div className="card-content lightblue">
+                <p className="card-text mt-3"><span className="display-4 fw-bold">{log.name}</span></p>
+                <p className="card-text mt-3"><span className="display-6 fw-bold">{log.type}</span></p>
+                <p className="card-text mt-3"><span className="display-6 fw-bold">{log.reps}</span> Reps</p>
+                <p className="card-text mt-3"><span className="display-6 fw-bold">{log.sets}</span> Sets</p>
+                <p className="card-text mt-3"><span className="display-6 fw-bold">{log.caloriesBurnt}</span> Cal</p>
+            </div>
+        </div>
+    </div>
+  );
+}
+
 // Recommendations component
 const Recommendations = (props) => {
   const db = getDatabase();
   const staticData = 'static-data/recs';
   const [params, setParams] = useState({
-    type: null,
-    length: null
-  })
-  const [answerData,setAnswerData] = useState([]);
+    type: "cut",
+    length: 1
+  });
+  const [answerData,setAnswerData] = useState({});
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
-  let user = props.userID;
+  const userID = props.userID;
   React.useEffect(() => {
-    if(user === null) {
+    if(_.isNull(userID)) {
       navigate("/login");
+    } else {
+      let targetRef = ref(db, staticData);
+      onValue(targetRef, (snapshot) => {
+        const allObjects = snapshot.val();
+        if (!_.isNull(allObjects) && _.isEmpty(answerData)) {
+            console.log("DB Connection success. Seeding allData.")
+            setAnswerData(allObjects);
+        }
+      });
     }
   });
-
-  let answer = "";
   function handleChange (e) {
     console.log("Handle Change")
     console.log(e.target.id + ": "+ e.target.value);
@@ -45,31 +70,34 @@ const Recommendations = (props) => {
     console.log("Form Submit");
     console.log("No null:" + checkObjectKeys(params));
     if(checkObjectKeys(params)) {
-      let targetData = staticData + '/' + params.type;
-      let targetArray = [];
-      let targetRef = ref(db, targetData);
-      onValue(targetRef, (snapshot) => {
-        const allObjects = snapshot.val();
-        if (!_.isNull(allObjects)) {
-            console.log("DB Connection success. Seeding allData.")
-            const allKeys = Object.keys(allObjects);
-            targetArray = allKeys.map((key) => {
-                const singleTaskCopy = {...allObjects[key]}; //copy element at that key
-                singleTaskCopy.key = key; //locally save the key string as an "id" for later
-                return singleTaskCopy; //the transformed object to store in the array
-            });
-            console.log(targetArray);
-        }
-      });
-      targetArray = targetArray.filter((responseData)=>(_.isEqual(responseData.length, params.length)));
-      targetArray = targetArray[0].exercise;
+      let targetObj = {};
+      targetObj = answerData[params.type];
+      console.log(targetObj);
+      targetObj = targetObj[params.length-1];
+      console.log(targetObj);
+      let targetArray = targetObj.exercise;
+      console.log(targetArray);
       let allKeys = Object.keys(targetArray);
       targetArray = allKeys.map((key) => {
         const singleTaskCopy = {...targetArray[key]}; //copy element at that key
         singleTaskCopy.key = key; //locally save the key string as an "id" for later
         return singleTaskCopy; //the transformed object to store in the array
       });
-
+      let count = 0;
+      let arrayResult = targetArray.map((exercise) => {
+        count++;
+        return <RecsCard exercise={exercise} key={count}/>
+      });
+      let targetResult = (
+        <>
+        <h3 className="display-5 fw-bold">Hi, <span>{userID}</span>. This is our exercise reccomendation to {params.type} for {params.length} month(s).</h3>
+        <h3 className="display-5 fw-bold">All exercises are meant for daily practice for 5 days a week.</h3>
+        <div classname="row">
+          {arrayResult}
+        </div>
+        </>
+      )
+      setAnswer(targetResult);
     }
   }
 
@@ -89,17 +117,17 @@ const Recommendations = (props) => {
                 <div className="card-body text-center text-lg-start">
                   <h2 className="display-3 fw-bold text-center" id="recs-question">Your Workout Plan</h2>
                   <div className="row text-center pt-5" >
-                    <div className="col-12 mt-5 mb-5">
-                      <h3 className="display-5 fw-bold" id="recs-answer">{answerData}</h3>
+                    <div className="col-12 mt-5 mb-5" id="recs-answer">
+                      {answer}
                     </div>
                     <div className="col-12 mt-5 skyblue">
-                    <form className="recs-form" onSubmit={handleSubmit}>
+                    <form className="recs-form">
                       <div className="form-group">
                         <label htmlFor="fitness-goal"><h3 className="display-5 fw-bold">Ask Here!</h3></label>
                         <div className="mb-5 mt-3 row">
                           <div className="col-12 col-md-6">
                           <span className="recs-form skyblue">I want to</span>
-                          <select className="form-control mx-2" id="type" onChange={handleChange} value={params.type} style={{ width: 'auto', display: 'inline-block' }}>
+                          <select className="form-control mx-2 text-center" id="type" onChange={handleChange}>
                             <option value="" disabled>Select goal</option>
                             <option value="cut">cut</option>
                             <option value="bulk">bulk</option>
@@ -107,7 +135,7 @@ const Recommendations = (props) => {
                           </div>
                           <div className="col-12 col-md-6">
                           <span>for</span>
-                          <select className="form-control mx-2" id="length" onChange={handleChange} value={params.length} style={{ width: 'auto', display: 'inline-block' }}>
+                          <select className="form-control mx-2 text-center" id="length" onChange={handleChange}>
                             <option value="" disabled>Select duration (months)</option>
                             {[...Array(12)].map((_, i) => (
                               <option key={i + 1} value={i + 1}>{i + 1}</option>
@@ -117,8 +145,8 @@ const Recommendations = (props) => {
                           </div>
                         </div>
                       </div>
-                      <button type="submit" className="btn w-100 fw-bold" id="recs-submit">Submit</button>
                     </form>
+                    <button className="btn w-100 fw-bold" id="recs-submit" onClick={handleSubmit}>Submit</button>
                     </div>
                   </div>
                 </div>

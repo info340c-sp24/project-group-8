@@ -25,6 +25,11 @@
   color: skyblue;
 }
 
+.recommendations-card-answer {
+  border: 5px solid lightblue;
+  color: lightblue;
+}
+
 #goal-label, #recs-question{
   color: skyblue;
 }
@@ -35,6 +40,10 @@
 
 .skyblue {
   color: skyblue;
+}
+
+.lightblue {
+  color:lightblue
 }
 
 #recs-submit {

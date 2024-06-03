@@ -40,7 +40,7 @@ function GeneralContent(props) {
               <div className="col-sm-12 col-lg-4">
                 <div className="row p-5">
                   <div className="col-12">
-                    <h3>Net Average Calorie</h3>
+                    <h3>Net Total Calories Intake</h3>
                   </div>
                   <div className="col-12">
                     <h4 id="avg-cal-net" className="display-3 nowrap">{output.netCalories}</h4> <span>cal</span>
@@ -84,9 +84,14 @@ function WorkoutContent(props) {
   });
   console.log("UniqueDates:" + uniqueDates);
   console.log("UniqueDates:" + uniqueDates.length);
-  uniqueDates = new Set(uniqueDates);
-  console.log("UniqueDates:" + uniqueDates);
-  console.log("UniqueDates:" + uniqueDates.length);
+  if (uniqueDates.length > 0) {
+    uniqueDates = new Set(uniqueDates);
+    console.log("UniqueDates:" + uniqueDates);
+    console.log("UniqueDates:" + uniqueDates.length);
+    uniqueDates = uniqueDates.size;
+  } else {
+    uniqueDates = uniqueDates.length
+  }
   let caloriesOutput = workoutLogs.map((log) => {
     let logValue = log.value;
     let calories = logValue.calories.value;
@@ -109,7 +114,7 @@ function WorkoutContent(props) {
                     <h3>Monthly Workout Streak</h3>
                   </div>
                   <div className="col-12">
-                    <h4 id="monthly-wo" className="display-3 nowrap">{uniqueDates.length + "/" + daysEval}</h4> <span>day</span>
+                    <h4 id="monthly-wo" className="display-3 nowrap">{uniqueDates + "/" + daysEval}</h4> <span>day</span>
                   </div>
                 </div>
               </div>
@@ -120,7 +125,7 @@ function WorkoutContent(props) {
                     <h3>Average Calorie Output</h3>
                   </div>
                   <div className="col-12">
-                    <h4 id="avg-cal-out" className="display-3 nowrap">{totalCaloriesOutput / uniqueDates.length}</h4> <span>cal/day</span>
+                    <h4 id="avg-cal-out" className="display-3 nowrap">{totalCaloriesOutput / uniqueDates}</h4> <span>cal/day</span>
                   </div>
                 </div>
               </div>
@@ -149,7 +154,14 @@ function FoodContent(props) {
     let logDate = log.date.date;
     return logDate;
   });
-  uniqueDates = new Set(uniqueDates);
+  if (uniqueDates.length > 0) {
+    uniqueDates = new Set(uniqueDates);
+    console.log("UniqueDates:" + uniqueDates);
+    console.log("UniqueDates:" + uniqueDates.length);
+    uniqueDates = uniqueDates.size;
+  } else {
+    uniqueDates = uniqueDates.length
+  }
 
   let foodDetails = foodLogs.map((log) => {
     let logValue = log.value;
@@ -179,7 +191,7 @@ function FoodContent(props) {
                     <h3>Average Calorie</h3>
                   </div>
                   <div className="col-12">
-                    <h4 id="avg-cal-in" className="display-3 nowrap">{parseInt(totalCaloriesInput / uniqueDates.length)}</h4> <span>cal/day</span>
+                    <h4 id="avg-cal-in" className="display-3 nowrap">{parseInt(totalCaloriesInput / uniqueDates)}</h4> <span>cal/day</span>
                   </div>
                 </div>
               </div>
@@ -190,7 +202,7 @@ function FoodContent(props) {
                     <h3>Average Carb</h3>
                   </div>
                   <div className="col-12">
-                    <h4 id="avg-carb" className="display-3 nowrap">{1.0 * totalCarb / uniqueDates.length}</h4> <span>grams/day</span>
+                    <h4 id="avg-carb" className="display-3 nowrap">{1.0 * totalCarb / uniqueDates}</h4> <span>grams/day</span>
                   </div>
                 </div>
               </div>
@@ -201,7 +213,7 @@ function FoodContent(props) {
                     <h3>Average Protein</h3>
                   </div>
                   <div className="col-12">
-                    <h4 id="avg-prot" className="display-3 nowrap">{1.0 * totalProtein / uniqueDates.length}</h4> <span>grams/day</span>
+                    <h4 id="avg-prot" className="display-3 nowrap">{1.0 * totalProtein / uniqueDates}</h4> <span>grams/day</span>
                   </div>
                 </div>
               </div>
@@ -212,7 +224,7 @@ function FoodContent(props) {
                     <h3>Average Fat</h3>
                   </div>
                   <div className="col-12">
-                    <h4 id="avg-fat" className="display-3 nowrap">{1.0 * totalFat / uniqueDates.length}</h4> <span>grams/day</span>
+                    <h4 id="avg-fat" className="display-3 nowrap">{1.0 * totalFat / uniqueDates}</h4> <span>grams/day</span>
                   </div>
                 </div>
               </div>

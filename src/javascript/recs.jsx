@@ -90,7 +90,7 @@ const Recommendations = (props) => {
       });
       let targetResult = (
         <>
-        <h3 className="display-5 fw-bold">Hi, <span>{userID}</span>. This is our exercise reccomendation to {params.type} for {params.length} month(s).</h3>
+        <h3 className="display-5 fw-bold">Hi, <span>{userID}</span>. This is our exercise recommendation to {params.type} for {params.length} month(s).</h3>
         <h3 className="display-5 fw-bold">All exercises are meant for daily practice for 5 days a week.</h3>
         <div classname="row">
           {arrayResult}

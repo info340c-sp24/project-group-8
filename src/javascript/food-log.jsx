@@ -8,9 +8,9 @@ function LogCard(props) {
     let log = props.log;
     return(
         <div className="col-12 mt-2 mb-3 text-center">
-            <div className="card mx-5 pb-3">
+            <div className="card mx-lg-5 mx-2 pb-3">
                 <div className="card-content">
-                    <p className="card-text mt-3"><span className="display-4 fw-bold" id="food-name">{log.name}</span></p>
+                    <p className="card-text mt-3 text-nowrap"><span className="display-4 fw-bold" id="food-name">{log.name}</span></p>
                     <p className="card-text mt-3"><span className="display-6 fw-bold" id="food-calories">{log.calories.value}</span> {log.calories.unit}</p>
                     <p className="card-text mt-3"><span className="display-6 fw-bold" id="food-protein">{log.protein.value}</span> {log.protein.unit} of Protein</p>
                     <p className="card-text mt-3"><span className="display-6 fw-bold" id="food-fat">{log.fat.value}</span> {log.fat.unit} of Fat</p>

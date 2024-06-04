@@ -9,10 +9,10 @@ import { getDatabase, ref, onValue, child } from 'firebase/database';
 function RecsCard(props) {
   let log = props.exercise;
   return (
-    <div className="col-12 mt-2 mb-3 text-center ">
-        <div className="card mx-5 pb-3 recommendations-card-answer">
+    <div className="col-12 my-4 text-center ">
+        <div className="card mx-lg-5 pb-3 recommendations-card-answer">
             <div className="card-content lightblue">
-                <p className="card-text mt-3"><span className="display-4 fw-bold">{log.name}</span></p>
+                <p className="card-text mt-3 text-nowrap"><span className="display-4 fw-bold">{log.name}</span></p>
                 <p className="card-text mt-3"><span className="display-6 fw-bold">{log.type}</span></p>
                 <p className="card-text mt-3"><span className="display-6 fw-bold">{log.reps}</span> Reps</p>
                 <p className="card-text mt-3"><span className="display-6 fw-bold">{log.sets}</span> Sets</p>
@@ -90,9 +90,9 @@ const Recommendations = (props) => {
       });
       let targetResult = (
         <>
-        <h3 className="display-5 fw-bold">Hi, <span>{userID}</span>. This is our exercise recommendation to {params.type} for {params.length} month(s).</h3>
-        <h3 className="display-5 fw-bold">All exercises are meant for daily practice for 5 days a week.</h3>
-        <div classname="row">
+        <h3 className="display-6 fw-bold">Hi, <span>{userID}</span>. This is our exercise recommendation to {params.type} for {params.length} month(s).</h3>
+        <h3 className="display-6 fw-bold">All exercises are meant for daily practice for 5 days a week.</h3>
+        <div className="row">
           {arrayResult}
         </div>
         </>
@@ -113,7 +113,7 @@ const Recommendations = (props) => {
           <div className="row">
             <div className="col-1 col-lg-2"></div>
             <div className="col-10 col-lg-8">
-              <div className="card w-100 ml-3 mt-5 p-5 pt-2" id="recommendations-card">
+              <div className="card w-100 ml-3 mt-5 p-lg-5 pt-2" id="recommendations-card">
                 <div className="card-body text-center text-lg-start">
                   <h2 className="display-3 fw-bold text-center" id="recs-question">Your Workout Plan</h2>
                   <div className="row text-center pt-5" >

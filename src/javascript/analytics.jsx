@@ -87,7 +87,7 @@ function WorkoutContent(props) {
   if (uniqueDates.length > 0) {
     uniqueDates = new Set(uniqueDates);
     console.log("UniqueDates:" + uniqueDates);
-    console.log("UniqueDates:" + uniqueDates.length);
+    console.log("UniqueDates:" + uniqueDates.size);
     uniqueDates = uniqueDates.size;
   } else {
     uniqueDates = uniqueDates.length
@@ -324,9 +324,9 @@ function Analytics(props) {
             singleTaskCopy.key = key; //locally save the key string as an "id" for later
             return singleTaskCopy; //the transformed object to store in the array
           });
+          console.log(allArray);
+          setAllData(allArray)
         }
-        //console.log(allArray);
-        setAllData(allArray)
       });
 
       function checkOut() {
@@ -336,6 +336,12 @@ function Analytics(props) {
       return checkOut;
     }
   });
+  let defaultValue = maxDate.year + "-"
+  if (maxDate.month < 10) {
+    defaultValue += "0";
+  }
+  defaultValue += maxDate.month;
+  console.log(defaultValue);
 
   let todayDate = new Date();
   todayDate = new Date(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate());
@@ -352,8 +358,20 @@ function Analytics(props) {
       year: todayDate.year
     })
   }
-  let logData = allData.filter((log) => (_.isEqual(log.date.month,maxDate.month) && _.isEqual(log.date.year,maxDate.year) && log.date.date < maxDate.date));
-
+  let content;
+  let logData
+  if (_.isEmpty(allData)) {
+    logData = null;
+    content = (
+      <h2 className="display-6 text-center mt-3" id="error-msg">Please enter some data first in Logs</h2>
+    )
+  } else {
+    console.log(allData);
+    logData = allData.filter((log) => (_.isEqual(log.date.month,maxDate.month) && _.isEqual(log.date.year,maxDate.year) && log.date.date < maxDate.date));
+    content = (
+      <AnalyticsContent userData={logData} daysEval={maxDate.date}/>
+    )
+  }
   function handleQuery(event) {
     let contentDate = event.target.value;
     console.log("Query date:" + contentDate);
@@ -374,6 +392,7 @@ function Analytics(props) {
         date: contentDate.getDate()
     });
   }
+
   return (
     <>
       <header>
@@ -382,14 +401,14 @@ function Analytics(props) {
           <h2 className="fst-italic opacity-50 mt-4">"The unexamined life is not worth living."</h2>
           <form id="dateQuery" className="mb-3">
               <label htmlFor="date-search" className="fw-bold display-6 mt-4">Month Search</label>
-              <input type="month" className="form-control mt-4 w-50 mx-auto" id="date-search" onChange={handleQuery}/>
+              <input type="month" className="form-control mt-4 w-50 mx-auto" id="date-search" value={defaultValue} onChange={handleQuery}/>
           </form>
         </div>
       </header>
 
       <main>
         <div className="container">
-          <AnalyticsContent userData={logData} daysEval={maxDate.date}/>
+          {content}
         </div>
       </main>
     </>
